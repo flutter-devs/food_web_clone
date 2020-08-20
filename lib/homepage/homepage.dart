@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_web_clone/homepage/favourite/favourite.dart';
 import 'package:food_web_clone/homepage/homeview.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.home),
             title: Text(''),
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
             title: Text(''),
@@ -68,7 +70,7 @@ class _HomePageState extends State<HomePage> {
 
       case 2:
         {
-          print("Fair");
+           return Favourite();
         }
         break;
 

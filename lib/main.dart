@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_web_clone/auth/intro/intro_screen.dart';
 import 'package:food_web_clone/auth/welcome_foodie_login/welcome_foodie_login.dart';
 import 'package:food_web_clone/bloc/landing_bloc.dart';
+import 'package:food_web_clone/homepage/favourite/favourite.dart';
 import 'package:food_web_clone/homepage/homepage.dart';
 import 'package:food_web_clone/homepage/homeview.dart';
 
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
             if (snapshot.hasData) {
 
              return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
-           //   return HomePage();
+           //   return Favourite();
 
             } else {
               return Center();

@@ -138,7 +138,7 @@ class IntroScreenState extends State<IntroScreen> {
 
   commonButtonView() {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 250),
+      constraints: BoxConstraints(maxWidth: 250.0),
       child: Card(
         color: Colors.white,
         margin: EdgeInsets.only(left: 25, right: 25, top: 35, bottom: 35),
@@ -250,12 +250,12 @@ class SubheadingText extends StatelessWidget {
              );
           } else {
             return CustomTextView(
-              fontSize: 18,
-              marginFromTop: 10,
+              fontSize: 18.0,
+              marginFromTop: 10.0,
               color: Colors.white,
               text: text,
               marginFromBottom: 20.0,
-           maxWidth: 320,
+           maxWidth: 320.0,
             );
           }
         });

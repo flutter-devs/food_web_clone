@@ -39,6 +39,20 @@ class HomePageViewModel {
 
   ];
 
+  List<String> listOfFavouriteFoodItems = [
+    "Good Thai",
+    "Sushi car",
+    "Blacksmith Cafe",
+    "Pizza Box",
+  ];
+  List<String> listOfFavouriteFoodItemsRating = [
+    "4.9",
+    "3.7",
+    "4.2",
+    "2.9",
+  ];
+
+
   List<MostPopularDishModel> listOfMostPopularModel = [
     MostPopularDishModel(
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
