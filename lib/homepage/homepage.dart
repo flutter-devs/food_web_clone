@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_web_clone/homepage/favourite/favourite.dart';
 import 'package:food_web_clone/homepage/homeview.dart';
+import 'package:food_web_clone/homepage/location/location.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,10 +37,11 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.favorite_border),
             activeIcon: Icon(Icons.favorite),
             title: Text(''),
-          ),BottomNavigationBarItem(
+          ),
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.person),
             title: Text(''),
-          ),
+          ),*/
         ],
         currentIndex: _selectedIndex,
           unselectedIconTheme: IconThemeData(
@@ -64,7 +66,7 @@ class _HomePageState extends State<HomePage> {
 
       case 1:
         {
-          print("Good");
+          return Location();
         }
         break;
 
@@ -74,11 +76,11 @@ class _HomePageState extends State<HomePage> {
         }
         break;
 
-      case 3:
+      /*case 3:
         {
           print("Poor");
         }
-        break;
+        break;*/
 
     }
   }

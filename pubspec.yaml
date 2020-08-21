@@ -65,6 +65,17 @@ flutter:
     - assets/intro/intro_cycle.png
     - assets/intro/intro_location.png
     - assets/intro/intro_search.png
+    - assets/images/afganistan.png
+    - assets/images/albania.png
+    - assets/images/algeria.png
+    - assets/images/american_samoa.png
+    - assets/images/andorra.png
+    - assets/images/angola.png
+    - assets/images/anguilla.png
+    - assets/images/antigua_2.jpg
+    - assets/images/argentina.png
+    - assets/images/armenia.jpg
+    - assets/images/australia.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
