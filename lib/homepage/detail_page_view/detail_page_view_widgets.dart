@@ -4,6 +4,8 @@ import 'package:food_web_clone/homepage/detail_page_view/detailpage_view_model.d
 import 'package:google_fonts/google_fonts.dart';
 
 class HeadingBarDetailPageView extends StatelessWidget {
+  String imagePath;
+  String headingText;
   double fontSizeOfBackArrow;
   var heightOfImage;
   double fontSizeOfTitleText;
@@ -21,7 +23,9 @@ class HeadingBarDetailPageView extends StatelessWidget {
       this.positionedLeftTitle,
       this.positionedLeftIcon,
       this.positionedtopIcon,
-      this.maxWidthOfText});
+      this.maxWidthOfText,
+      this.imagePath,
+       this.headingText});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +34,8 @@ class HeadingBarDetailPageView extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(left: 0),
-          child: Image.network(
-            "assets/food/chinese.jpg",
+          child: Image.asset(
+            imagePath ??"assets/food/cafe.jpg",
             fit: BoxFit.cover,
             height: heightOfImage,
             width: size.width,
@@ -43,10 +47,13 @@ class HeadingBarDetailPageView extends StatelessWidget {
           top: positionedtopIcon,
           child: Container(
             margin: EdgeInsets.only(left: 19),
-            child: Icon(
-              Icons.arrow_back,
-              size: fontSizeOfBackArrow,
-              color: Colors.white,
+            child: InkWell(
+              onTap: ()=> Navigator.of(context).pop(),
+              child: Icon(
+                Icons.arrow_back,
+                size: fontSizeOfBackArrow,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -57,7 +64,7 @@ class HeadingBarDetailPageView extends StatelessWidget {
           child: Container(
             width: maxWidthOfText,
             child: Text(
-              "Black smith cafe",
+              headingText??"Black smith cafe",
               style: GoogleFonts.lato(
                   fontStyle: FontStyle.normal,
                   color: Colors.white,

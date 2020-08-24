@@ -46,8 +46,8 @@ class _MyAppState extends State<MyApp> {
           builder: (context ,snapshot){
             if (snapshot.hasData) {
 
-            //  return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
-              return DetailPageView();
+             return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
+            // return HomePage();
 
             } else {
               return Center();

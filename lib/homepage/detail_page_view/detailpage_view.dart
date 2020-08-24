@@ -1,28 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:food_web_clone/const/color_const.dart';
 import 'package:food_web_clone/homepage/detail_page_view/detail_page_view_widgets.dart';
 import 'package:food_web_clone/homepage/detail_page_view/review/review_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPageView extends StatelessWidget {
+
+  String imagePath;
+  String headingText;
+
+  DetailPageView({this.imagePath, this.headingText});
+
   @override
   Widget build(BuildContext context) {
+
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            HeadingBarDetailPageViewLb(),
+            HeadingBarDetailPageViewLb(imagePath: imagePath,headingText: headingText,),
             OrderFoodDeliveryButtonLb(),
-            ShareReviewPhotoLb(),
-            _AdressLb(),
+           ShareReviewPhotoLb(),
+           _AdressLb(),
             callText(size,"Call","+61123456789"),
             callText(size,"Cuisines","Australian, Cafe"),
             callText(size,"Average Cost","+61123456789"),
             SizedBox(height: 20,),
             callText(size,"Photos","+ Add"),
             PhotosItemLb(),
-            Review()
+            Card(
+              margin: EdgeInsets.only(bottom: 10.0),
+                child: Review(index: 0,)),
+            Card(
+              margin: EdgeInsets.only(bottom: 10.0),
+                child: Review(index: 1,)),
           ],
         ),
       ),
@@ -243,6 +256,11 @@ class OrderFoodDeliveryButtonLb extends StatelessWidget {
 
 
 class HeadingBarDetailPageViewLb extends StatelessWidget{
+  String imagePath;
+  String headingText;
+
+  HeadingBarDetailPageViewLb({this.imagePath, this.headingText});
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -250,6 +268,8 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
        builder: (BuildContext context, BoxConstraints constraints) {
          if (constraints.maxWidth > 1200.0) {
            return HeadingBarDetailPageView(
+             headingText: headingText,
+             imagePath: imagePath,
              heightOfImage: size.height*.45,
              fontSizeOfBackArrow: 32,
              fontSizeOfTitleText: 35,
@@ -263,6 +283,8 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
          }
          else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
            return HeadingBarDetailPageView(
+             headingText: headingText,
+             imagePath: imagePath,
              heightOfImage: size.height*.40,
              fontSizeOfBackArrow: 28,
              fontSizeOfTitleText: 28,
@@ -277,6 +299,8 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
          else {
 
            return HeadingBarDetailPageView(
+             headingText: headingText,
+             imagePath: imagePath,
              heightOfImage: size.height*.35,
             //  heightOfImage: Dimensions(context).boxHeight*.35,
              fontSizeOfBackArrow: 24,

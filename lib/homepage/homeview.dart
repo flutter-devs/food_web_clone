@@ -171,13 +171,19 @@ class _HomeViewState extends State<HomeView> {
                 fontSize: fontSizeF,
                 fontWeight: FontWeight.bold),
           ),
-          Text(
-            text_2,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.lato(
-              fontStyle: FontStyle.normal,
-              color: Colors.green,
-              fontSize: fontSizeF,
+          InkWell(
+            onTap: ()
+            {
+
+            },
+            child: Text(
+              text_2,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.lato(
+                fontStyle: FontStyle.normal,
+                color: Colors.green,
+                fontSize: fontSizeF,
+              ),
             ),
           ),
 //        CustomTextView(
@@ -277,6 +283,7 @@ class MostPopularListLb extends StatelessWidget {
               marginFromTopAdress: 10.0,
               cardSymetricMArgin: 14.0,
               marginOfItem: 40.0,
+
             );
           } else if (constraints.maxWidth > 800.0 &&
               constraints.maxWidth < 1200) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
+import 'package:food_web_clone/homepage/detail_page_view/detailpage_view.dart';
 import 'package:food_web_clone/homepage/homepage_view_model.dart';
 
 class MostPopularList extends StatelessWidget {
@@ -16,6 +17,7 @@ class MostPopularList extends StatelessWidget {
   var cardSymetricMArgin;
   var heightOfView;
   var marginOfItem;
+
   MostPopularList(
   {  this.imageWidth,
     this.imageHeight,
@@ -57,11 +59,20 @@ class MostPopularList extends StatelessWidget {
                    topLeft: Radius.circular(8.0),
                    topRight: Radius.circular(8.0),
                  ),
-                 child: Image.asset(
-                   homePageViewModel.listOfImages[index],
-                   width: imageWidth+20,
-                   height: imageHeight,
-                   fit: BoxFit.cover,
+                 child: InkWell(
+                   onTap: ()
+                   {
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPageView(
+                       imagePath: homePageViewModel.listOfImages[index],
+                       headingText:  homePageViewModel.listOfMostPopularModel[index].dishName,
+                     )));
+                   },
+                   child: Image.asset(
+                     homePageViewModel.listOfImages[index],
+                     width: imageWidth+20,
+                     height: imageHeight,
+                     fit: BoxFit.cover,
+                   ),
                  ),
                ),
                CustomTextView(
@@ -164,11 +175,17 @@ class MealsDealList extends StatelessWidget {
                  child: Stack(
                   // fit: StackFit.expand,
                    children: <Widget>[
-                     Image.asset(
-                       homePageViewModel.listOfMealsDeals[index],
-                       width: imageWidth+10,
-                       height: heightOfView,
-                       fit: BoxFit.cover,
+                     InkWell(
+                       onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPageView(
+                         imagePath:  homePageViewModel.listOfMealsDeals[index],
+                         headingText:  homePageViewModel.listOfMostPopularModel[index].dishName,
+                       ))),
+                       child: Image.asset(
+                         homePageViewModel.listOfMealsDeals[index],
+                         width: imageWidth+10,
+                         height: heightOfView,
+                         fit: BoxFit.cover,
+                       ),
                      ),
                      Positioned(
                        child:  CustomTextView(
