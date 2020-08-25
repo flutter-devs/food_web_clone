@@ -4,6 +4,70 @@ import 'package:food_web_clone/common_widgets/custom_textview.dart';
 import 'package:food_web_clone/homepage/detail_page_view/detailpage_view.dart';
 import 'package:food_web_clone/homepage/homepage_view_model.dart';
 
+
+class PopularRestaurantsList extends StatelessWidget
+{
+
+  var imageWidth;
+var imageHeight;
+var cardSymetricMArgin;
+var heightOfView;
+var marginOfItem;
+
+
+  PopularRestaurantsList(
+  { this.imageWidth,
+    this.imageHeight,
+    this.cardSymetricMArgin,
+    this.heightOfView,
+    this.marginOfItem,
+});
+
+  HomePageViewModel homePageViewModel = HomePageViewModel();
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width*0.97,
+      margin: EdgeInsets.only(top: marginOfItem),
+      alignment: Alignment.center,
+      height: heightOfView,
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context , index)=>Card(
+            margin: EdgeInsets.symmetric(horizontal: cardSymetricMArgin),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8.0))),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8.0),
+                    topRight: Radius.circular(8.0),
+                  ),
+                  child: Image.asset(
+                    homePageViewModel.listOfImages[index],
+                    width: imageWidth+20,
+                    height: imageHeight,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+
+
+
+
+              ],
+            ),
+          )),
+    );
+  }
+
+}
+
 class MostPopularList extends StatelessWidget {
   var imageWidth;
   var imageHeight;
@@ -126,6 +190,7 @@ class MealsDealList extends StatelessWidget {
   var marginOfItem;
  var bottomPositionedPlaces;
  var bottomPositionedDish;
+ var marginFromLeftYellowHighlighter;
 
   MealsDealList(
   {
@@ -142,7 +207,8 @@ class MealsDealList extends StatelessWidget {
     this.cardSymetricMArgin,
     this.marginOfItem,
     this.bottomPositionedPlaces,
-    this.bottomPositionedDish
+    this.bottomPositionedDish,
+    this.marginFromLeftYellowHighlighter
   });
 
   HomePageViewModel homePageViewModel = HomePageViewModel();
@@ -187,16 +253,33 @@ class MealsDealList extends StatelessWidget {
                          fit: BoxFit.cover,
                        ),
                      ),
+
                      Positioned(
-                       child:  CustomTextView(
-                         marginFromTop: marginFromTop,
-                         text: homePageViewModel.listOfMostPopularModel[index].dishName,
-                         maxWidth: imageWidth,
-                         alignment: Alignment.topLeft,
-                         marginFromLeft: marginFromLeft,
-                         color: Colors.white,
-                         fontWeight: FontWeight.bold,
-                         fontSize: fontSize,
+                       child:  Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: <Widget>[
+                           Container(
+                              height: 4.0,
+                             width: 70,
+                             margin: EdgeInsets.only(left: marginFromLeftYellowHighlighter),
+                             alignment: Alignment.topLeft,
+                             decoration: BoxDecoration(
+                               color: Colors.yellow,
+                               borderRadius: BorderRadius.circular(20.0),
+                             ),
+                           ),
+                           CustomTextView(
+                             marginFromTop: marginFromTop,
+                             text: homePageViewModel.listOfMostPopularModel[index].dishName,
+                             maxWidth: imageWidth,
+                             alignment: Alignment.topLeft,
+                             marginFromLeft: marginFromLeft,
+                             color: Colors.white,
+                             fontWeight: FontWeight.bold,
+                             fontSize: fontSize,
+                           ),
+                         ],
                        ),
                        left: 4,
                        bottom: bottomPositionedDish,

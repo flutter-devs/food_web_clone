@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
 import 'package:food_web_clone/homepage/homepage_view_model.dart';
 import 'package:food_web_clone/homepage/homepage_widgets.dart';
+import 'package:food_web_clone/homepage/see_all_trending/trending.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeView extends StatefulWidget {
@@ -29,10 +30,12 @@ class _HomeViewState extends State<HomeView> {
             searchField(size),
            topHorizontalImagesList(size),
             mostPopularSeeAllTextRowLb(size,"Most Popular" ,"See all"),
-           MostPopularListLb(),
+          MostPopularListLb(),
            mostPopularSeeAllTextRowLb(size,"Meals Deals" ,"See all"),
-            MealsDealsListLb(),
+           MealsDealsListLb(),
             SizedBox(height: 50,),
+            mostPopularSeeAllTextRowLb(size,"Popular Restaurants" ,"See all"),
+            PopularRestaurantsLb()
           ],
         ),
       ),
@@ -175,6 +178,8 @@ class _HomeViewState extends State<HomeView> {
             onTap: ()
             {
 
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> TrendingPage()));
+
             },
             child: Text(
               text_2,
@@ -194,6 +199,48 @@ class _HomeViewState extends State<HomeView> {
 //        ),
         ],
       ),
+    );
+  }
+}
+
+class PopularRestaurantsLb extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if(constraints.maxWidth > 1200.0) {
+            return PopularRestaurantsList(
+              marginOfItem: 25.0,
+              heightOfView: 220.0,
+              cardSymetricMArgin: 10.0,
+              imageHeight: 220.0,
+              imageWidth: 170.0,
+
+            );
+          }
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+            return PopularRestaurantsList(
+              marginOfItem: 20.0,
+              heightOfView: 170.0,
+              cardSymetricMArgin: 10.0,
+              imageHeight: 170.0,
+              imageWidth: 160.0,
+
+            );
+          }
+          else
+          {
+            return PopularRestaurantsList(
+              marginOfItem: 15.0,
+              heightOfView: 150.0,
+              cardSymetricMArgin: 10.0,
+               imageHeight: 150.0,
+              imageWidth: 140.0,
+
+            );
+          }
+
+        }
     );
   }
 }
@@ -218,6 +265,7 @@ class MealsDealsListLb extends StatelessWidget {
               marginOfItem: 40,
               bottomPositionedDish: 70,
               bottomPositionedPlaces: 35,
+              marginFromLeftYellowHighlighter: 18.0,
             );
           }
           else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
@@ -235,6 +283,7 @@ class MealsDealsListLb extends StatelessWidget {
               marginOfItem: 30,
               bottomPositionedDish: 60,
               bottomPositionedPlaces: 25,
+              marginFromLeftYellowHighlighter: 16.0,
             );
           }
           else
@@ -254,6 +303,7 @@ class MealsDealsListLb extends StatelessWidget {
               cardSymetricMArgin: 10.0,
               marginOfItem: 10.0,
               heightOfView: 265.0,
+              marginFromLeftYellowHighlighter: 15.0,
             );
           }
 
