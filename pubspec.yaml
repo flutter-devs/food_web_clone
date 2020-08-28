@@ -76,6 +76,12 @@ flutter:
     - assets/images/argentina.png
     - assets/images/armenia.jpg
     - assets/images/australia.jpg
+    - assets/images/profile_pic.jpg
+    - assets/profile/account.png
+    - assets/profile/profile_phone.png
+    - assets/profile/profile_settings.png
+    - assets/profile/address.png
+    - assets/profile/order.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
