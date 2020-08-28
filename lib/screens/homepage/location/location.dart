@@ -19,23 +19,25 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(
-          width: size.width,
-      ),
-          UserCurrentLocatonLb(),
-          userNameField(
-              textEditingController: textEditingControllerUsername,
-              size: size,
-              hintText: "Search The City...",
-              valid: Validator().validateEmpty),
-          RecentlyVisitedCountry(),
-          FavouriteDivider(),
-          FlagListTileLb(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+            width: size.width,
+        ),
+            UserCurrentLocatonLb(),
+            userNameField(
+                textEditingController: textEditingControllerUsername,
+                size: size,
+                hintText: "Search The City...",
+                valid: Validator().validateEmpty),
+            RecentlyVisitedCountry(),
+            FavouriteDivider(),
+            FlagListTileLb(),
+          ],
+        ),
       ),
     );
 
@@ -152,7 +154,7 @@ class FavouriteDivider extends StatelessWidget {
           else
           {
             return Container(
-              margin: EdgeInsets.only(top: 5.0,right: 10,left: 20),
+              margin: EdgeInsets.only(top: 5.0,right: 10.0,left: 20.0),
               height: 0.8,
               width: size.width,
               color: Colors.grey,
@@ -177,7 +179,7 @@ class RecentlyVisitedCountry extends StatelessWidget {
           }
           else
           {
-            return CustomTextView(fontSize: 18,marginFromTop: 20,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20,fontWeight: FontWeight.bold);
+            return CustomTextView(fontSize: 18.0,marginFromTop: 20.0,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20.0,fontWeight: FontWeight.bold);
           }
 
         }
@@ -212,11 +214,11 @@ class UserCurrentLocatonLb extends StatelessWidget
           else
           {
             return UserCurrentLocaton(
-              fontSizeOfBackIcon: 18,
-              fontSizeOfText: 18,
-              maginFromLeftIcon: 10,
-              marginLeftFromIcon: 10,
-              marginTopItem: 20,
+              fontSizeOfBackIcon: 18.0,
+              fontSizeOfText: 18.0,
+              maginFromLeftIcon: 10.0,
+              marginLeftFromIcon: 10.0,
+              marginTopItem: 20.0,
             );
           }
 

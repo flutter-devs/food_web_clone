@@ -38,6 +38,7 @@ class OrderDetailView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       child: ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
           itemCount: 3,
       itemBuilder: (context, index)=> Container(
@@ -52,15 +53,14 @@ class OrderDetailView extends StatelessWidget {
               // image
               Stack(
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(),
-                    child: Image.network(homePageViewModel.listOfImages[index],fit: BoxFit.cover
-                      ,height: heightOfImage,width:size.width,),
-                  ),
+                  Image.asset(homePageViewModel.listOfMealsDeals[index],fit: BoxFit.cover
+                    ,height: heightOfImage,width:size.width,),
+
                   Container(
                     height: heightOfImage,
                     alignment: Alignment.center,
                     width: size.width,
+                    //color: Colors.transparent,
                     margin: EdgeInsets.only(left: 0),
                     child: Text("Mon July 20 2020 Order Placed",style: GoogleFonts.lato(
                         fontStyle: FontStyle.normal, color: Colors.white,fontSize: fontSizeOfImageText,fontWeight: FontWeight.bold),),
@@ -74,7 +74,7 @@ class OrderDetailView extends StatelessWidget {
               SizedBox(height: 30.0,),
               Center(
                 child: Container(
-                     width: size.width*.5,
+                  width: size.width*.8,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[

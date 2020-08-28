@@ -16,27 +16,29 @@ class DetailPageView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            HeadingBarDetailPageViewLb(imagePath: imagePath,headingText: headingText,),
-            OrderFoodDeliveryButtonLb(),
-           ShareReviewPhotoLb(),
-           _AdressLb(),
-            callText(size,"Call","+61123456789"),
-            callText(size,"Cuisines","Australian, Cafe"),
-            callText(size,"Average Cost","+61123456789"),
-            SizedBox(height: 20,),
-            callText(size,"Photos","+ Add"),
-            PhotosItemLb(),
-            Card(
-              margin: EdgeInsets.only(bottom: 10.0),
-                child: Review(index: 0,)),
-            Card(
-              margin: EdgeInsets.only(bottom: 10.0),
-                child: Review(index: 1,)),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              HeadingBarDetailPageViewLb(imagePath: imagePath,headingText: headingText,),
+              OrderFoodDeliveryButtonLb(),
+             ShareReviewPhotoLb(),
+             _AdressLb(),
+              callText(size,"Call","+61123456789"),
+              callText(size,"Cuisines","Australian, Cafe"),
+              callText(size,"Average Cost","+61123456789"),
+              SizedBox(height: 20,),
+              callText(size,"Photos","+ Add"),
+              PhotosItemLb(),
+              Card(
+                margin: EdgeInsets.only(bottom: 10.0),
+                  child: Review(index: 0,)),
+              Card(
+                margin: EdgeInsets.only(bottom: 10.0),
+                  child: Review(index: 1,)),
+            ],
+          ),
         ),
       ),
     );
@@ -278,6 +280,7 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
              positionedLeftTitle: 22,
              postionedBottomTitle: 45,
              maxWidthOfText: 240,
+             alignment: Alignment.center,
 
            );
          }

@@ -27,6 +27,7 @@ class FlagListTile extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     LocationViewViewModel locationViewViewModel  = new LocationViewViewModel();
     return  ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 4,
         itemBuilder: (context , index)=> Card(

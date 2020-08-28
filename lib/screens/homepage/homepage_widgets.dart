@@ -33,6 +33,7 @@ var marginOfItem;
       alignment: Alignment.center,
       height: heightOfView,
       child: ListView.builder(
+         // physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 10,
           scrollDirection: Axis.horizontal,
@@ -108,6 +109,7 @@ class MostPopularList extends StatelessWidget {
       alignment: Alignment.center,
      height: heightOfView,
      child: ListView.builder(
+        // physics: NeverScrollableScrollPhysics(),
          shrinkWrap: true,
          itemCount: 10,
          scrollDirection: Axis.horizontal,
@@ -223,6 +225,7 @@ class MealsDealList extends StatelessWidget {
       alignment: Alignment.center,
     height: heightOfView,
      child: ListView.builder(
+      //   physics: NeverScrollableScrollPhysics(),
          shrinkWrap: true,
          itemCount: 10,
          scrollDirection: Axis.horizontal,

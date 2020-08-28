@@ -18,25 +18,25 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              width: size.width,
-            ),
-            Sydney(),
-            searchField(size),
-           topHorizontalImagesList(size),
-            mostPopularSeeAllTextRowLb(size,"Most Popular" ,"See all"),
-          MostPopularListLb(),
-           mostPopularSeeAllTextRowLb(size,"Meals Deals" ,"See all"),
-           MealsDealsListLb(),
-            SizedBox(height: 50,),
-            mostPopularSeeAllTextRowLb(size,"Popular Restaurants" ,"See all"),
-            PopularRestaurantsLb()
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(width: size.width,),
+              Sydney(),
+              searchField(size),
+              topHorizontalImagesList(size),
+              mostPopularSeeAllTextRowLb(size,"Most Popular" ,"See all"),
+              MostPopularListLb(),
+              mostPopularSeeAllTextRowLb(size,"Meals Deals" ,"See all"),
+              MealsDealsListLb(),
+              SizedBox(height: 50,),
+              mostPopularSeeAllTextRowLb(size,"Popular Restaurants" ,"See all"),
+              PopularRestaurantsLb(),
+            ],
+          ),
         ),
       ),
     );

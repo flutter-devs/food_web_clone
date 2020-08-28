@@ -7,18 +7,20 @@ import 'package:food_web_clone/screens/homepage/profile/profile_widgets.dart';
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            _ProfileText(),
-            _ProfilePhotoLb(),
-            _NameText(),
-            _AccountDetailTile(),
-            _LogoutButton(),
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _ProfileText(),
+              _ProfilePhotoLb(),
+              _NameText(),
+              _AccountDetailTile(),
+              _LogoutButton(),
 
-          ],
+            ],
+          ),
         ),
       ),
     );

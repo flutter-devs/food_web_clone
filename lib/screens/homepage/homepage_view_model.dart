@@ -58,7 +58,7 @@ class HomePageViewModel {
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
     MostPopularDishModel(
         dishName: "Greek House",
-        adress: "122 Queen Street Fried Chicken, American"),
+        adress: "122 Queen Street Fried Chicken"),
     MostPopularDishModel(
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
     MostPopularDishModel(
@@ -103,12 +103,12 @@ class HomePageViewModel {
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
     MostPopularDishModel(
         dishName: "Greek House",
-        adress: "122 Queen Street Fried Chicken, American"),
+        adress: "122 Queen Street Fried Chicken"),
     MostPopularDishModel(
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
     MostPopularDishModel(
         dishName: "Greek House",
-        adress: "122 Queen Street Fried Chicken, American"),
+        adress: " Street Fried Chicken, American"),
     MostPopularDishModel(
         dishName: "KFC Broadway", adress: "23 Queen Street Burntos, Greek"),
     MostPopularDishModel(

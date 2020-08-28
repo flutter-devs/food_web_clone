@@ -257,6 +257,7 @@ class _StarThumbsUpRow extends StatelessWidget {
           Container(
             height: 30,
             child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 itemCount: 4,

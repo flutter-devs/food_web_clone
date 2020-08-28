@@ -7,17 +7,19 @@ class Address extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          _CustomAppBar(),
-          _AddressLine(heading: "LINE 1", hint: "103 STEINER ST"),
-          _AddressLine(heading: "LINE 2", hint: "Apt #604"),
-          _AddressLine(heading: "Zipcode", hint: "94102"),
-          _AddressLine(heading: "City", hint: "London"),
-          _AddressLine(heading: "Country", hint: "UNITED STATES"),
-          _SAVEADRESS(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: <Widget>[
+            _CustomAppBar(),
+            _AddressLine(heading: "LINE 1", hint: "103 STEINER ST", marginFromTop: 50.0,marginFromTopT: 80,marginFromTopW: 90,),
+            _AddressLine(heading: "LINE 2", hint: "Apt #604"),
+            _AddressLine(heading: "Zipcode", hint: "94102"),
+            _AddressLine(heading: "City", hint: "London"),
+            _AddressLine(heading: "Country", hint: "UNITED STATES"),
+            _SAVEADRESS(),
+          ],
+        ),
       ),
     );
   }
@@ -26,8 +28,10 @@ class Address extends StatelessWidget {
 class _AddressLine extends StatelessWidget {
   String heading;
   String hint;
-
-  _AddressLine({this.heading, this.hint});
+  double marginFromTop;
+  double marginFromTopW;
+  double marginFromTopT;
+  _AddressLine({this.heading,this.hint,this.marginFromTop = 0.0 ,this.marginFromTopT =0.0 ,this.marginFromTopW =0.0 ,});
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +39,23 @@ class _AddressLine extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth > 1200.0) {
-        return _addressLine(
-            size: size, fonttSizeOFText: 20.0, heading: heading, hint: hint ,marginFromTop: 40.0 ,marginRightFromText: 40.0 ,sizeOfField: size.width*.4,maxWidth: 150);
+        return Container(
+          margin: EdgeInsets.only(top: marginFromTopW),
+          child: _addressLine(
+              size: size, fonttSizeOFText: 20.0, heading: heading, hint: hint ,marginFromTop: 40.0 ,marginRightFromText: 40.0 ,sizeOfField: size.width*.4,maxWidth: 150),
+        );
       } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
-        return _addressLine(
-            size: size, fonttSizeOFText: 18.0, heading: heading, hint: hint ,marginFromTop: 30.0,marginRightFromText: 30.0 ,sizeOfField: size.width*.55,maxWidth: 150);
+        return Container(
+          margin: EdgeInsets.only(top: marginFromTopT),
+          child: _addressLine(
+              size: size, fonttSizeOFText: 18.0, heading: heading, hint: hint ,marginFromTop: 30.0,marginRightFromText: 30.0 ,sizeOfField: size.width*.55,maxWidth: 150),
+        );
       } else {
-        return _addressLine(
-            size: size, fonttSizeOFText: 16.0, heading: heading, hint: hint ,marginFromTop: 20.0 ,marginRightFromText: 20.0 ,sizeOfField: size.width*.7,maxWidth: 80) ;
+        return Container(
+          margin: EdgeInsets.only(top: marginFromTop),
+          child: _addressLine(
+              size: size, fonttSizeOFText: 16.0, heading: heading, hint: hint ,marginFromTop: 20.0 ,marginRightFromText: 10.0 ,sizeOfField: size.width*.6,maxWidth: 80.0),
+        );
       }
     });
   }
@@ -53,13 +66,14 @@ class _AddressLine extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: marginFromTop),
-          width: size.width *.9,
+          width: size.width *.92,
+          alignment: Alignment.center,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
                 width: maxWidth,
-                alignment: Alignment.topRight,
+                alignment: Alignment.topLeft,
                 margin: EdgeInsets.only(right: marginRightFromText),
                 child: Text(
                   heading,
@@ -137,8 +151,8 @@ class _CustomAppBar extends StatelessWidget {
         return CustomAppBarEditProfile(
           marginFromTop: 20.0,
           fontSizeOfDone: 16.0,
-          fontSizeOfEditProfile: 24.0,
-          fontSizeOfIcon: 24.0,
+          fontSizeOfEditProfile: 20.0,
+          fontSizeOfIcon: 22.0,
           fontSizeOfMyProfile: 16.0,
           headingText: "Delivery Address ",
         );

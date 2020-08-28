@@ -9,21 +9,23 @@ import 'package:google_fonts/google_fonts.dart';
 class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorConstant.profileBackgroundColor,
-      body: Column(
-        children: <Widget>[
-          _CustomAppBar(),
-          SizedBox(height: 20.0,),
-          HeadingTextViewLb(text:"SECURITY"),
-          _InfoTileLb(firstText: "Allow Push Notification"),
-          _InfoTileLb(firstText: "Enable Face ID/Touch ID"),
-          HeadingTextViewLb(text:"PUSH NOTIFICATIONS"),
-          _InfoTileLb(firstText: "Order Updates"),
-          _InfoTileLb(firstText: "New Arrivals"),
-          _InfoTileLb(firstText: "Promotion"),
-          _saveLb(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorConstant.profileBackgroundColor,
+        body: Column(
+          children: <Widget>[
+            _CustomAppBar(),
+            SizedBox(height: 20.0,),
+            HeadingTextViewLb(text:"SECURITY"),
+            _InfoTileLb(firstText: "Allow Push Notification"),
+            _InfoTileLb(firstText: "Enable Face ID/Touch ID"),
+            HeadingTextViewLb(text:"PUSH NOTIFICATIONS"),
+            _InfoTileLb(firstText: "Order Updates"),
+            _InfoTileLb(firstText: "New Arrivals"),
+            _InfoTileLb(firstText: "Promotion"),
+            _saveLb(),
+          ],
+        ),
       ),
     );
   }

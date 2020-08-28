@@ -14,6 +14,7 @@ class HeadingBarDetailPageView extends StatelessWidget {
   double positionedLeftIcon;
   double positionedtopIcon;
   double maxWidthOfText;
+  var alignment;
 
   HeadingBarDetailPageView(
       {this.fontSizeOfBackArrow,
@@ -25,55 +26,60 @@ class HeadingBarDetailPageView extends StatelessWidget {
       this.positionedtopIcon,
       this.maxWidthOfText,
       this.imagePath,
-       this.headingText});
+       this.headingText,
+      this.alignment =Alignment.topLeft});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Stack(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(left: 0),
-          child: Image.asset(
-            imagePath ??"assets/food/cafe.jpg",
-            fit: BoxFit.cover,
-            height: heightOfImage,
-            width: size.width,
+    return Container(
+      width: size.width,
+      alignment: alignment,
+      child: Stack(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 0),
+            child: Image.asset(
+              imagePath ??"assets/food/cafe.jpg",
+              fit: BoxFit.cover,
+              height: heightOfImage,
+              width: size.width,
+            ),
           ),
-        ),
-        // back arrow
-        Positioned(
-          left: positionedLeftIcon,
-          top: positionedtopIcon,
-          child: Container(
-            margin: EdgeInsets.only(left: 19),
-            child: InkWell(
-              onTap: ()=> Navigator.of(context).pop(),
-              child: Icon(
-                Icons.arrow_back,
-                size: fontSizeOfBackArrow,
-                color: Colors.white,
+          // back arrow
+          Positioned(
+            left: positionedLeftIcon,
+            top: positionedtopIcon,
+            child: Container(
+              margin: EdgeInsets.only(left: 19),
+              child: InkWell(
+                onTap: ()=> Navigator.of(context).pop(),
+                child: Icon(
+                  Icons.arrow_back,
+                  size: fontSizeOfBackArrow,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
-        // title Text
-        Positioned(
-          bottom: postionedBottomTitle,
-          left: positionedLeftTitle,
-          child: Container(
-            width: maxWidthOfText,
-            child: Text(
-              headingText??"Black smith cafe",
-              style: GoogleFonts.lato(
-                  fontStyle: FontStyle.normal,
-                  color: Colors.white,
-                  fontSize: fontSizeOfTitleText,
-                  fontWeight: FontWeight.bold),
+          // title Text
+          Positioned(
+            bottom: postionedBottomTitle,
+            left: positionedLeftTitle,
+            child: Container(
+              width: maxWidthOfText,
+              child: Text(
+                headingText??"Black smith cafe",
+                style: GoogleFonts.lato(
+                    fontStyle: FontStyle.normal,
+                    color: Colors.white,
+                    fontSize: fontSizeOfTitleText,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

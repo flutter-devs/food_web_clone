@@ -58,6 +58,7 @@ class AccountInfoTile extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     LocationViewViewModel locationViewViewModel  = new LocationViewViewModel();
     return  ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: 5,
         itemBuilder: (context , index)=> InkWell(

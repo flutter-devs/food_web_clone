@@ -20,6 +20,7 @@ class TrendingPage extends  StatelessWidget
             mostPopularSeeAllTextRowLb(size,"20 Restaurants" ,"Filter"),
           //  HeadingTrendingText(),
             ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 3,
                 itemBuilder: (context , index)=>WishListItemLb()),

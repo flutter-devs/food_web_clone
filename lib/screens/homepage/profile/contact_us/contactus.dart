@@ -6,16 +6,18 @@ import 'package:food_web_clone/screens/homepage/profile/edit_profile/edit_prrofi
 class ContactUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorConstant.profileBackgroundColor,
-      body: Column(
-        children: <Widget>[
-          _CustomAppBar(),
-          SizedBox(height: 20.0,),
-          _InfoTileLb(firstText: "Address 142 Steiner ,San Francisco ,CA,94115",secondText: "",),
-          _InfoTileLb(firstText: "E-mail us",secondText: "text123@gmail.com",),
-          _ContactUs(),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorConstant.profileBackgroundColor,
+        body: Column(
+          children: <Widget>[
+            _CustomAppBar(),
+            SizedBox(height: 20.0,),
+            _InfoTileLb(firstText: "Address 142 Steiner ,San Francisco ,CA,94115",secondText: "",),
+            _InfoTileLb(firstText: "E-mail us",secondText: "text123@gmail.com",),
+            _ContactUs(),
+          ],
+        ),
       ),
     );
   }
@@ -153,7 +155,7 @@ class _InfoTileLb extends StatelessWidget {
           {
             return InfoTile(
               firstText: firstText,
-              fontSizeOFText: 17.0,
+              fontSizeOFText: 16.0,
               heightOfItem: 60.0,
               secondText: secondText,
             );

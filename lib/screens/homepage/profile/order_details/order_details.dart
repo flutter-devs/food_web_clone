@@ -8,22 +8,17 @@ class OrderDetails extends StatelessWidget {
   HomePageViewModel homePageViewModel = HomePageViewModel();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            _CustomAppBar(),
-             _orderViewLb(),
-           /* Container(
-              margin: EdgeInsets.only(),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.asset(homePageViewModel.listOfImages[index],fit: BoxFit.cover
-                  ,height: 164,width:164,),
-              ),
-            )*/
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _CustomAppBar(),
+              _orderViewLb(),
+
+            ],
+          ),
         ),
       ),
     );
@@ -72,6 +67,7 @@ class _orderViewLb extends StatelessWidget {
               marginTopItem: 20.0,
               fontSizeOfButtonText: 14.0,
               widthOfImage: size.width*.9,
+             // widthOfImage: 300.0,
               fontSizeOfDishName: 16.0,
               marginBetweenInfoTile: 5.0,
               fontSizeOFTotalText: 18.0,
@@ -113,7 +109,7 @@ class _CustomAppBar extends StatelessWidget {
             return CustomAppBarEditProfile(
               marginFromTop: 20.0,
               fontSizeOfDone: 16.0,
-              fontSizeOfEditProfile: 24.0,
+              fontSizeOfEditProfile: 20.0,
               fontSizeOfIcon: 24.0,
               fontSizeOfMyProfile: 16.0,
               headingText: "Order Details",

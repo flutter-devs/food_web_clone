@@ -8,21 +8,23 @@ import 'package:google_fonts/google_fonts.dart';
 class Favourite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+    return SafeArea(
+      child: Scaffold(
 body: Column(
   children: <Widget>[
-    HeadingFavouriteText(),
-        Expanded(
-          child: ListView.builder(
-            shrinkWrap: true,
-           itemCount: 3,
-          itemBuilder: (context , index)=>WishListItemLb()),
-        ),
+      HeadingFavouriteText(),
+          Expanded(
+            child: ListView.builder(
+               // physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+             itemCount: 3,
+            itemBuilder: (context , index)=>WishListItemLb()),
+          ),
   ],
 ),
 
 
+      ),
     );
   }
 }
@@ -37,11 +39,11 @@ class HeadingFavouriteText extends StatelessWidget{
             return CustomTextView(fontSize: 55,marginFromTop: 50,color: Colors.black,text: "Favourite",marginFromBottom: 50,alignment: Alignment.topLeft,marginFromLeft: 50);
           }
           else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
-            return CustomTextView(fontSize: 45,marginFromTop: 30,color: Colors.black,text: "Favourite",marginFromBottom: 30,);
+            return CustomTextView(fontSize: 45,marginFromTop: 30,color: Colors.black,text: "Favourite",marginFromBottom: 30,fontWeight: FontWeight.bold,);
           }
           else
           {
-            return CustomTextView(fontSize: 35,marginFromTop: 20.0,color: Colors.black,text: "Favourite",marginFromBottom: 20.0,);
+            return CustomTextView(fontSize: 20,marginFromTop: 20.0,color: Colors.black,text: "Favourite",marginFromBottom: 20.0,fontWeight: FontWeight.bold,);
           }
 
         }
@@ -104,7 +106,7 @@ class WishListItemLb extends StatelessWidget {
               widthOfGoodThaiRow: 150.0,
               fontSizeOfDishName: 18.0,
               fontSizeOFTime: 14.0,
-              fontSizeOfAdress: 14.0,
+              fontSizeOfAdress: 12.0,
               fontSizeOfLandmark: 14.0,
               fontSizeOFBookMark: 24,
               marginBetweenItem: 4.0,
@@ -155,6 +157,7 @@ class WishListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
         itemCount: 3,

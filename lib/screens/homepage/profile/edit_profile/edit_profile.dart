@@ -6,20 +6,22 @@ import 'package:food_web_clone/screens/homepage/profile/edit_profile/edit_prrofi
 class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorConstant.profileBackgroundColor,
-      body: Column(
-        children: <Widget>[
-          _CustomAppBar(),
-           HeadingTextViewLb(text:"Public Profile"),
-            _InfoTileLb(firstText: "First Name",secondText: "Cristina",),
-            _InfoTileLb(firstText: "Last Name",secondText: "Ashley",),
-           HeadingTextViewLb(text:"Private Details"),
-          _InfoTileLb(firstText: "Email Address",secondText: "cristina@gmail.com",),
-          _InfoTileLb(firstText: "Phone Number",secondText: "+9876532356324",),
-        ],
-      ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: ColorConstant.profileBackgroundColor,
+        body: Column(
+          children: <Widget>[
+            _CustomAppBar(),
+             HeadingTextViewLb(text:"Public Profile"),
+              _InfoTileLb(firstText: "First Name",secondText: "Cristina",),
+              _InfoTileLb(firstText: "Last Name",secondText: "Ashley",),
+             HeadingTextViewLb(text:"Private Details"),
+            _InfoTileLb(firstText: "Email Address",secondText: "cristina@gmail.com",),
+            _InfoTileLb(firstText: "Phone Number",secondText: "+9876532356324",),
+          ],
+        ),
 
+      ),
     );
   }
 }
@@ -77,7 +79,7 @@ class HeadingTextViewLb extends StatelessWidget {
          if(constraints.maxWidth > 1200.0) {
            return  CustomTextView(
              fontSize: 26,
-             marginFromTop: 30,
+             marginFromTop: 60,
              color: Colors.grey,
              text: text,
              alignment: Alignment.topLeft,
@@ -88,7 +90,7 @@ class HeadingTextViewLb extends StatelessWidget {
          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
            return CustomTextView(
              fontSize: 24,
-             marginFromTop: 20,
+             marginFromTop: 60,
              color: Colors.grey,
              text: text,
              alignment: Alignment.topLeft,
@@ -99,8 +101,8 @@ class HeadingTextViewLb extends StatelessWidget {
          else
          {
            return CustomTextView(
-             fontSize: 22,
-             marginFromTop: 20.0,
+             fontSize: 20,
+             marginFromTop: 40.0,
              color: Colors.grey,
              text: text,
              alignment: Alignment.topLeft,
@@ -144,7 +146,7 @@ class _CustomAppBar extends StatelessWidget {
             return CustomAppBarEditProfile(
               marginFromTop: 20.0,
               fontSizeOfDone: 16.0,
-              fontSizeOfEditProfile: 24.0,
+              fontSizeOfEditProfile: 20.0,
               fontSizeOfIcon: 24.0,
               fontSizeOfMyProfile: 16.0,
               headingText: "Edit Profile",

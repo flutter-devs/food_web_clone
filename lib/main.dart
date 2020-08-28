@@ -46,10 +46,9 @@ class _MyAppState extends State<MyApp> {
           stream: _landingBloc.getLandingPageStream,
           builder: (context ,snapshot){
             if (snapshot.hasData) {
-
-              return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
+           //  return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
            //   return ();
-               //  return HomePage();
+                 return HomePage();
             } else {
               return Center();
             }
