@@ -3,11 +3,17 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "index.html": "7d95b5034b7a9a10310e4670cd618fd7",
 "/": "7d95b5034b7a9a10310e4670cd618fd7",
+"assets/assets/profile/address.png": "a6c155c67ae93a20cd24aba436a12c59",
+"assets/assets/profile/account.png": "ac323e7635e33157ecafe0089c40c74e",
+"assets/assets/profile/profile_phone.png": "ee59fa4d84ec7f77a27f874093e73383",
+"assets/assets/profile/order.png": "116a2b68ea33003c15614ca669a22a25",
+"assets/assets/profile/profile_settings.png": "92c25f37d91bbc70ba1a197b38c0b57c",
 "assets/assets/intro/intro_1.png": "72901cd642a0cb6b7d5177bd0899269b",
 "assets/assets/intro/intro_location.png": "256e895897964b4720d4fce0d388f8b8",
 "assets/assets/intro/intro_cycle.png": "c1c19e9f271da8325be923d6301a89da",
 "assets/assets/intro/intro_search.png": "43e1a159acbe2816a985966717adb6b5",
 "assets/assets/images/anguilla.png": "be5d35681d223feee9bad3ca067df8e2",
+"assets/assets/images/profile_pic.jpg": "8ba7516ee21d9b69c40cb4ef0ea02c0b",
 "assets/assets/images/afganistan.png": "bb90111855e175f4db5ca0777b70928f",
 "assets/assets/images/antigua_2.jpg": "cde528d9e2e209dcd61ecdc71e60b11b",
 "assets/assets/images/angola.png": "da1e43fa88480790d55910e43e422189",
@@ -29,12 +35,12 @@ const RESOURCES = {
 "assets/assets/food/dish_1.jpg": "5cfcdf9705d6b10bbfdcb293a1c46971",
 "assets/FontManifest.json": "580ff1a5d08679ded8fcf5c6848cece7",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"assets/AssetManifest.json": "42f1215ac3b0290706802020377ee71c",
+"assets/AssetManifest.json": "b11752ae9555747e348e37f79c8e4cd6",
 "assets/LICENSE": "aa091f405a5d3a3d76421471fd45f8e1",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"main.dart.js": "294007a7a32e9d1dec013e8725638cf1",
+"main.dart.js": "4cb3a1c856b91d0a33b12128f60ee7aa",
 "manifest.json": "9e29199e571f1b9225c6ab49ca1d110c"
 };
 
