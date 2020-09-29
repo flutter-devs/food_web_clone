@@ -34,7 +34,7 @@ class _PhotoCollectionLb extends StatelessWidget {
           marginTopItem: 20,
           marginFromBottom: 30.0,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return _PhotoCollection(
           heightOfImage: 120.0,
           heightOFWidth: 120.0,
@@ -144,7 +144,7 @@ class _ReviewTextLb extends StatelessWidget {
           marginFromTop: 10.0,
           maxWidth: size.width * .8,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return _ReviewText(
           reviewViewModel: reviewViewModel,
           fontSizeOfText: 18.0,
@@ -213,7 +213,7 @@ class _StarThumbsUpRowLb extends StatelessWidget {
           fontSizeOFRating: 18.0,
           fontSizeOFThumbsUpIcon: 32.0,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return _StarThumbsUpRow(
           fontSizeOFStarIcon: 28.0,
           fontSizeOFCommentIcon: 28.0,
@@ -336,7 +336,7 @@ class _PhotoNameLb extends StatelessWidget {
           heightOfButton: 40,
           fontSizeOfButtonText: 18,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return _PhotoName(
           heightOFWidth: 60.0,
           heightOfImage: 60.0,

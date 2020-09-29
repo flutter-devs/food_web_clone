@@ -46,7 +46,7 @@ class _CustomAppBar extends StatelessWidget {
               headingText: "Settings",
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return CustomAppBarEditProfile(
               marginFromTop: 30.0,
               fontSizeOfDone: 18.0,
@@ -91,10 +91,10 @@ class _saveLb extends StatelessWidget {
               {
 
               },
-              child: CustomButton( buttonWidth: 250,marginFromTop: 30,buttonHeight: 50,buttonText: "Save",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: 250.0,marginFromTop: 30.0,buttonHeight: 50.0,buttonText: "Save",color: Color(0xffEB5A6C),),
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return  InkWell
               (
               splashColor: Colors.transparent,
@@ -106,7 +106,7 @@ class _saveLb extends StatelessWidget {
               {
                 //  Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
               },
-              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20,buttonHeight: 45,buttonText: "Save",color: Color(0xffEB5A6C),),
+              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20.0,buttonHeight: 45.0,buttonText: "Save",color: Color(0xffEB5A6C),),
             );
           }
           else
@@ -124,7 +124,7 @@ class _saveLb extends StatelessWidget {
                 // Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
 
               },
-              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10,buttonHeight: 45,buttonText: "Save",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10.0,buttonHeight: 45.0,buttonText: "Save",color: Color(0xffEB5A6C),),
             );
           }
         }
@@ -151,7 +151,7 @@ class _InfoTileLb extends StatelessWidget {
 
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return InfoTileButton(
               firstText: firstText,
               fontSizeOFText: 20.0,

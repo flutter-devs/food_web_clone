@@ -21,6 +21,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      //appBar: AppBar(),
       body: Container(
         width: double.infinity,
         child: Column(
@@ -73,10 +74,12 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               if( formKey.currentState.validate())
               {
                 print("yes its hit");
+                Navigator.of(context).pop();
+
 
               }
             },
-            child: CustomButton( buttonWidth: 250,marginFromTop: 30,buttonHeight: 50,buttonText: "Submit",color: Color(0xffEB5A6C),),
+            child: CustomButton( buttonWidth: 250.0,marginFromTop: 30.0,buttonHeight: 50.0,buttonText: "Submit",color: Color(0xffEB5A6C),),
           );
         }
         else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
@@ -93,10 +96,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               if( formKey.currentState.validate())
               {
                 print("yes its hit");
-
+              Navigator.of(context).pop();
               }
             },
-            child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20,buttonHeight: 45,buttonText: "Submit",color: Color(0xffEB5A6C),),
+            child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20.0,buttonHeight: 45.0,buttonText: "Submit",color: Color(0xffEB5A6C),),
           );
         }
         else
@@ -115,10 +118,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               if( formKey.currentState.validate())
               {
                 print("yes its hit");
+                Navigator.of(context).pop();
 
               }
             },
-            child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10,buttonHeight: 45,buttonText: "Submit",color: Color(0xffEB5A6C),),
+            child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10.0,buttonHeight: 45.0,buttonText: "Submit",color: Color(0xffEB5A6C),),
           );
         }
       }

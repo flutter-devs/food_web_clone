@@ -47,10 +47,10 @@ class _LogoutButton extends StatelessWidget {
 
             //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
               },
-              child: CustomButton( buttonWidth: 250,marginFromTop: 30,buttonHeight: 50,buttonText: "Logout",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: 250.0,marginFromTop: 30.0,buttonHeight: 50.0,buttonText: "Logout",color: Color(0xffEB5A6C),),
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return  InkWell
               (
               splashColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _LogoutButton extends StatelessWidget {
               {
             //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
               },
-              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20,buttonHeight: 45,buttonText: "Logout",color: Color(0xffEB5A6C),),
+              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20.0,buttonHeight: 45.0,buttonText: "Logout",color: Color(0xffEB5A6C),),
             );
           }
           else
@@ -80,7 +80,7 @@ class _LogoutButton extends StatelessWidget {
             //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
 
               },
-              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10,buttonHeight: 45,buttonText: "Logout",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10.0,buttonHeight: 45.0,buttonText: "Logout",color: Color(0xffEB5A6C),),
             );
           }
         }
@@ -108,7 +108,7 @@ class _AccountDetailTile extends StatelessWidget {
               marginRightFromFlag: 20.0,
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return AccountInfoTile(
               marginLeftOfFlag: 15.0,
               marginTopItem: 10.0,
@@ -153,7 +153,7 @@ class _ProfilePhotoLb extends StatelessWidget {
               widthOfImage: 220.0,
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return ProfilePhoto(
               marginTopItem: 20.0,
               heightOfImage: 180.0,
@@ -189,7 +189,7 @@ class _ProfileText extends StatelessWidget {
               text: "Profile",
               fontWeight: FontWeight.bold,
             );
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return CustomTextView(
                 fontSize: 37,
                 marginFromTop: 22,
@@ -224,7 +224,7 @@ class _NameText extends StatelessWidget {
               fontWeight: FontWeight.bold,
               marginFromBottom: 15.0,
             );
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return CustomTextView(
                 fontSize: 37,
                 marginFromTop: 22,

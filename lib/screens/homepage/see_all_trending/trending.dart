@@ -39,7 +39,7 @@ class TrendingPage extends  StatelessWidget
                 text_1: text_1,
                 text_2: text_2,
                 fontSizeF: 21.0, fontSizeS: 18, marginFromTop: 20.0);
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return mostPopularSeeAllTextRow(
                 text_1: text_1,
                 text_2: text_2,
@@ -98,7 +98,7 @@ class HeadingTrendingText extends StatelessWidget{
           if(constraints.maxWidth > 1200.0) {
             return CustomTextView(fontSize: 55,marginFromTop: 50,color: Colors.black,text: "Trending",marginFromBottom: 50,alignment: Alignment.topLeft,marginFromLeft: 50);
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return CustomTextView(fontSize: 45,marginFromTop: 30,color: Colors.black,text: "Trending",marginFromBottom: 30,alignment: Alignment.topLeft,marginFromLeft: 30);
           }
           else
@@ -131,7 +131,7 @@ class HeadingBarTrendingPageViewLb extends StatelessWidget{
 
             );
           }
-          else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return HeadingBarTrendingPageView(
 
               heightOfImage: size.height*.40,

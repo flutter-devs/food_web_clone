@@ -36,14 +36,14 @@ class HeadingFavouriteText extends StatelessWidget{
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           if(constraints.maxWidth > 1200.0) {
-            return CustomTextView(fontSize: 55,marginFromTop: 50,color: Colors.black,text: "Favourite",marginFromBottom: 50,alignment: Alignment.topLeft,marginFromLeft: 50);
+            return CustomTextView(fontSize: 55.0,marginFromTop: 50.0,color: Colors.black,text: "Favourite",marginFromBottom: 50.0,alignment: Alignment.topLeft,marginFromLeft: 50.0);
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
-            return CustomTextView(fontSize: 45,marginFromTop: 30,color: Colors.black,text: "Favourite",marginFromBottom: 30,fontWeight: FontWeight.bold,);
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
+            return CustomTextView(fontSize: 45.0,marginFromTop: 30.0,color: Colors.black,text: "Favourite",marginFromBottom: 30.0,fontWeight: FontWeight.bold,);
           }
           else
           {
-            return CustomTextView(fontSize: 20,marginFromTop: 20.0,color: Colors.black,text: "Favourite",marginFromBottom: 20.0,fontWeight: FontWeight.bold,);
+            return CustomTextView(fontSize: 20.0,marginFromTop: 20.0,color: Colors.black,text: "Favourite",marginFromBottom: 20.0,fontWeight: FontWeight.bold,);
           }
 
         }
@@ -75,7 +75,7 @@ class WishListItemLb extends StatelessWidget {
               marginBetweenItem: 12.0,
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return WishListItem(
               allItemPadding: 10.0,
               heightOfCardView: 140.0,

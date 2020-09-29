@@ -1,12 +1,14 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:food_web_clone/common_widgets/common_textfield.dart';
 import 'package:food_web_clone/common_widgets/custom_button.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
 import 'package:food_web_clone/screens/auth/login/login.dart';
-import 'package:food_web_clone/screens/auth/welcome_foodie_login/welcome_foodie_login_widgets.dart';
+import 'package:food_web_clone/screens/auth/signup/welcome_foodie_login_widgets.dart';
 import 'package:food_web_clone/screens/homepage/homepage.dart';
 import 'package:food_web_clone/utils/validator.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WelcomeFoodieLogin extends StatefulWidget {
   @override
@@ -34,17 +36,25 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
                 textEditingController: textEditingControllerUsername,
                 size: size,
                 hintText: "Username",
-                valid: Validator().validateEmpty),
+                valid: Validator().validateEmpty,
+              isObsecure: false
+            ),
             userNameField(
                 textEditingController: textEditingControllerEmail,
                 size: size,
                 hintText: "Email",
-                valid: Validator().validateEmail),
+                valid: Validator().validateEmail,
+                isObsecure: false
+
+            ),
             userNameField(
                 textEditingController: textEditingControllerPassword,
                 size: size,
                 hintText: "Password",
-                valid: Validator().validateEmpty),
+                valid: Validator().validateEmpty,
+                isObsecure: true
+
+            ),
             // PasswordField(textEditingController: textEditingControllerPassword,key: _formKey,),
             signUp(size),
             TermsAndCondition(),
@@ -68,18 +78,18 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             onTap: () {
 
               if (formKey.currentState.validate()) {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
               }
             },
             child: CustomButton(
-              buttonWidth: 250,
-              marginFromTop: 30,
-              buttonHeight: 50,
+              buttonWidth: 250.0,
+              marginFromTop: 30.0,
+              buttonHeight: 50.0,
               buttonText: "SignUp",
             ),
           );
         } else if (constraints.maxWidth > 800.0 &&
-            constraints.maxWidth < 1200) {
+            constraints.maxWidth < 1200.0) {
           return InkWell(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
@@ -88,14 +98,14 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             onTap: () {
 
               if (formKey.currentState.validate()) {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
                 print("yes its hit");
               }
             },
             child: CustomButton(
                 buttonWidth: size.width * 0.40,
-                marginFromTop: 20,
-                buttonHeight: 45,
+                marginFromTop: 20.0,
+                buttonHeight: 45.0,
                 buttonText: "SignUp"),
           );
         } else {
@@ -106,10 +116,9 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             hoverColor: Colors.transparent,
             focusColor: Colors.transparent,
             onTap: () {
-              //
               if (formKey.currentState.validate()) {
                 print("yes its hit");
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (context) => HomePage()));
@@ -117,8 +126,8 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             },
             child: CustomButton(
                 buttonWidth: size.width * 0.9,
-                marginFromTop: 10,
-                buttonHeight: 45,
+                marginFromTop: 10.0,
+                buttonHeight: 45.0,
                 buttonText: "SignUp"),
           );
         }
@@ -128,7 +137,9 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
       {TextEditingController textEditingController,
       Size size,
       String hintText,
-      var valid}) {
+      var valid
+      ,
+      bool isObsecure}) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth > 1200.0) {
@@ -137,14 +148,19 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             marginFromTop: 30,
             textEditingController: textEditingController,
             hintText: hintText,
-            valid: valid);
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+            valid: valid
+          ,
+          isObsecure: isObsecure
+        );
+      } else if (constraints.maxWidth > 800.0&& constraints.maxWidth < 1200.0) {
         return userNameFieldWidget(
             fieldMaxWidth: size.width * 0.55,
             marginFromTop: 20,
             textEditingController: textEditingController,
             hintText: hintText,
-            valid: valid);
+            valid: valid,
+          isObsecure: isObsecure
+        );
 
       } else {
         return userNameFieldWidget(
@@ -152,6 +168,7 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
             marginFromTop: 15,
             textEditingController: textEditingController,
             hintText: hintText,
+            isObsecure: isObsecure,
             valid: valid);
       }
     });
@@ -170,7 +187,7 @@ class CreateYourAccount extends StatelessWidget {
           color: Colors.grey,
           text: "Create Your Account",
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return CustomTextView(
             fontSize: 20,
             marginFromTop: 10,
@@ -195,29 +212,52 @@ class TermsAndCondition extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth > 1200.0) {
-        return CustomTextView(
-          fontSize: 16,
-          marginFromTop: 15,
-          text: "Terms & Condition",
-          color: Colors.green,
-        );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
-        return CustomTextView(
-            fontSize: 15,
-            marginFromTop: 10,
-            text: "Terms & Condition",
-            color: Colors.green);
-      } else {
-        return CustomTextView(
-            fontSize: 14,
+        return InkWell(
+          onTap: (){
+            _launchURL();
+          },
+          child: CustomTextView(
+            fontSize: 16,
             marginFromTop: 15,
             text: "Terms & Condition",
-            color: Colors.green);
+            color: Colors.green,
+          ),
+        );
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
+        return InkWell(
+          onTap: (){
+            _launchURL();
+
+          },
+          child: CustomTextView(
+              fontSize: 15,
+              marginFromTop: 10,
+              text: "Terms & Condition",
+              color: Colors.green),
+        );
+      } else {
+        return InkWell(
+          onTap: (){
+            _launchURL();
+          },
+          child: CustomTextView(
+              fontSize: 14,
+              marginFromTop: 15,
+              text: "Terms & Condition",
+              color: Colors.green),
+        );
       }
     });
   }
 }
-
+_launchURL() async {
+  const url = 'http://flutterdevs.com/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 class LogInYourAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -230,7 +270,7 @@ class LogInYourAccount extends StatelessWidget {
           highlightColor: Colors.transparent,
           hoverColor: Colors.transparent,
           focusColor: Colors.transparent,
-          onTap: () => Navigator.push(
+          onTap: () => Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => Login())),
           child: CustomTextView(
               fontSize: 16,
@@ -239,13 +279,13 @@ class LogInYourAccount extends StatelessWidget {
               marginFromBottom: 40.0,
               color: Colors.green),
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return InkWell(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             focusColor: Colors.transparent,
-            onTap: () => Navigator.push(
+            onTap: () => Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => Login())),
             child: CustomTextView(
                 fontSize: 15,
@@ -259,7 +299,7 @@ class LogInYourAccount extends StatelessWidget {
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             focusColor: Colors.transparent,
-            onTap: () => Navigator.push(
+            onTap: () => Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => Login())),
             child: CustomTextView(
                 fontSize: 14,
@@ -282,7 +322,7 @@ class WelcomeToFoodiezHedingText extends StatelessWidget {
           marginFromTop: 175,
           fontSize: 45,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0&& constraints.maxWidth < 1200.0) {
         return HeadingText(
           marginFromTop: 150,
           fontSize: 35,

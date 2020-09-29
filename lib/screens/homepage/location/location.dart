@@ -56,7 +56,7 @@ class _LocationState extends State<Location> {
                 textEditingController: textEditingController,
                 hintText: hintText,
                 valid: valid);
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return userNameFieldWidget(
                 fieldMaxWidth: size.width * 0.55,
                 marginFromTop: 20,
@@ -172,10 +172,10 @@ class RecentlyVisitedCountry extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           if(constraints.maxWidth > 1200.0) {
-            return CustomTextView(fontSize: 35,marginFromTop: 45,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20, fontWeight: FontWeight.bold,);
+            return CustomTextView(fontSize: 35.0,marginFromTop: 45.0,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20.0, fontWeight: FontWeight.bold,);
           }
           else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
-            return CustomTextView(fontSize: 25,marginFromTop: 35,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20,fontWeight: FontWeight.bold);
+            return CustomTextView(fontSize: 25.0,marginFromTop: 35.0,color: Colors.black,text: "Recently Visited Country",alignment: Alignment.topLeft,marginFromLeft: 20.0,fontWeight: FontWeight.bold);
           }
           else
           {

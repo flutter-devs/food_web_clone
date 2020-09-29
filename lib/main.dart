@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_web_clone/bloc/landing_bloc.dart';
 import 'package:food_web_clone/screens/auth/intro/intro_screen.dart';
-import 'package:food_web_clone/screens/auth/welcome_foodie_login/welcome_foodie_login.dart';
+import 'package:food_web_clone/screens/auth/signup/welcome_foodie_login.dart';
 import 'package:food_web_clone/screens/homepage/homepage.dart';
 import 'package:food_web_clone/screens/homepage/profile/address/address.dart';
 import 'package:food_web_clone/screens/homepage/profile/edit_profile/edit_profile.dart';
@@ -39,16 +39,16 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        
+        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: StreamBuilder(
           stream: _landingBloc.getLandingPageStream,
           builder: (context ,snapshot){
             if (snapshot.hasData) {
-           //  return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
+            return snapshot.data == true ? WelcomeFoodieLogin() : IntroScreen();
            //   return ();
-                 return HomePage();
+           //      return HomePage();
             } else {
               return Center();
             }

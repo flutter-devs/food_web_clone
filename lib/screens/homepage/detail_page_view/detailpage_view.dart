@@ -227,25 +227,25 @@ class OrderFoodDeliveryButtonLb extends StatelessWidget {
         builder: (BuildContext context, BoxConstraints constraints) {
           if(constraints.maxWidth > 1200.0) {
             return OrderFoodDeliveryButton(
-              fontSizeText: 23,
-              heightOFButton: 65,
-              maxWidth: 250,
-              marginFromTop: 20,
+              fontSizeText: 23.0,
+              heightOFButton: 65.0,
+              maxWidth: 250.0,
+              marginFromTop: 20.0,
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return OrderFoodDeliveryButton(
-              fontSizeText: 20,
-              heightOFButton: 60,
-              marginFromTop: 10,
-              maxWidth: 200,
+              fontSizeText: 20.0,
+              heightOFButton: 60.0,
+              marginFromTop: 10.0,
+              maxWidth: 200.0,
             );
           }
           else
           {
             return OrderFoodDeliveryButton(
-              fontSizeText: 17,
-              heightOFButton: 45,
+              fontSizeText: 17.0,
+              heightOFButton: 45.0,
              maxWidth: size.width,
             );
           }

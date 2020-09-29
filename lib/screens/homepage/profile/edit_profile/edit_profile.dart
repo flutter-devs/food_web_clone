@@ -78,19 +78,19 @@ class HeadingTextViewLb extends StatelessWidget {
        builder: (BuildContext context, BoxConstraints constraints) {
          if(constraints.maxWidth > 1200.0) {
            return  CustomTextView(
-             fontSize: 26,
-             marginFromTop: 60,
+             fontSize: 26.0,
+             marginFromTop: 60.0,
              color: Colors.grey,
              text: text,
              alignment: Alignment.topLeft,
              marginFromLeft: 35.0,
-             marginFromBottom: 10,
+             marginFromBottom: 10.0,
            );
          }
          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
            return CustomTextView(
-             fontSize: 24,
-             marginFromTop: 60,
+             fontSize: 24.0,
+             marginFromTop: 60.0,
              color: Colors.grey,
              text: text,
              alignment: Alignment.topLeft,
@@ -101,7 +101,7 @@ class HeadingTextViewLb extends StatelessWidget {
          else
          {
            return CustomTextView(
-             fontSize: 20,
+             fontSize: 20.0,
              marginFromTop: 40.0,
              color: Colors.grey,
              text: text,

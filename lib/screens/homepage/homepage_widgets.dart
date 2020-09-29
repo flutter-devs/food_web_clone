@@ -182,7 +182,7 @@ class MealsDealList extends StatelessWidget {
 
   var marginFromTop;
   var marginFromLeft;
-  var fontSize;
+  double fontSize;
   var maxWidthOfAddress;
   var marginFromBottom;
   var fontSizeOfAdress;

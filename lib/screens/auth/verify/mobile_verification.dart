@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_web_clone/common_widgets/custom_button.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
+import 'package:food_web_clone/screens/homepage/homepage.dart';
 
 class MobileVerificationScreen extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
             MobileVerificationScreenText(),
             PleaseEnterYouEmail(),
             otpConfirmationField(),
-            MobileVerificationScreen(size),
+            mobileVerificationScreen(size),
 
           ],
         ),
@@ -49,7 +50,7 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
     );
   }
 
-  MobileVerificationScreen(size) =>
+  mobileVerificationScreen(size) =>
       LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
             if (constraints.maxWidth > 1200.0) {
@@ -66,15 +67,15 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                     print("yes its hit");
                   }
                 },
-                child: CustomButton(buttonWidth: 250,
-                  marginFromTop: 30,
-                  buttonHeight: 50,
+                child: CustomButton(buttonWidth: 250.0,
+                  marginFromTop: 30.0,
+                  buttonHeight: 50.0,
                   buttonText: "Verify Now",
                   color: Color(0xffEB5A6C),),
               );
             }
             else
-            if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+            if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
               return InkWell
                 (
                 splashColor: Colors.transparent,
@@ -89,8 +90,8 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                   }
                 },
                 child: CustomButton(buttonWidth: size.width * 0.40,
-                  marginFromTop: 20,
-                  buttonHeight: 45,
+                  marginFromTop: 20.0,
+                  buttonHeight: 45.0,
                   buttonText: "Verify Now",
                   color: Color(0xffEB5A6C),),
               );
@@ -110,11 +111,17 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                     print("yes its hit");
                   }
                 },
-                child: CustomButton(buttonWidth: size.width * 0.9,
-                  marginFromTop: 10,
-                  buttonHeight: 45,
-                  buttonText: "Verify Now",
-                  color: Color(0xffEB5A6C),),
+                child: InkWell(
+                  onTap: (){
+                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+
+                  },
+                  child: CustomButton(buttonWidth: size.width * 0.9,
+                    marginFromTop: 10.0,
+                    buttonHeight: 45.0,
+                    buttonText: "Verify Now",
+                    color: Color(0xffEB5A6C),),
+                ),
               );
             }
           }
@@ -156,7 +163,7 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
     bool lastField = false,
     var validator,
     bool autoVal = true,
-    bool isObscure = false,
+    bool isObscure = true,
     TextEditingController textEditingController,
     String iconData,
     bool keyboardTypeNumber = true,
@@ -239,7 +246,7 @@ class SignUpWithAnAccount extends StatelessWidget {
                   marginFromBottom: 40.0,
                   color: Colors.green),
             );
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return InkWell(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
@@ -283,7 +290,7 @@ class MobileVerificationScreenText extends StatelessWidget{
           if(constraints.maxWidth > 1200.0) {
             return CustomTextView(fontSize: 45,marginFromTop: 175,color: Colors.black,text: "Verify Your Mobile",);
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return CustomTextView(fontSize: 35,marginFromTop: 150,color: Colors.black,text: "Verify Your Mobile");
           }
           else
@@ -309,7 +316,7 @@ class PleaseEnterYouEmail extends StatelessWidget {
               color: Colors.grey,
               text: "Enter your code here",
             );
-          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+          } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
             return CustomTextView(
                 fontSize: 20,
                 marginFromTop: 10,

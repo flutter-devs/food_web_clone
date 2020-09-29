@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-userNameFieldWidget({double fieldMaxWidth, double marginFromTop, GlobalKey<FormState> key, TextEditingController textEditingController , String hintText , var valid}) {
+userNameFieldWidget({double fieldMaxWidth, double marginFromTop, GlobalKey<FormState> key, TextEditingController textEditingController , String hintText , var valid, bool isObsecure=false}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -10,6 +10,7 @@ userNameFieldWidget({double fieldMaxWidth, double marginFromTop, GlobalKey<FormS
         margin: EdgeInsets.only(top: marginFromTop),
         child: TextFormField(
           controller: textEditingController,
+          obscureText: isObsecure,
           key: key,
           validator: valid,
           decoration: InputDecoration(

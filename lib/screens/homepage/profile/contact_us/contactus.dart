@@ -42,7 +42,7 @@ class _ContactUs extends StatelessWidget {
               {
 
               },
-              child: CustomButton( buttonWidth: 250,marginFromTop: 30,buttonHeight: 50,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: 250.0,marginFromTop: 30.0,buttonHeight: 50.0,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
             );
           }
           else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
@@ -57,7 +57,7 @@ class _ContactUs extends StatelessWidget {
               {
               //  Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
               },
-              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20,buttonHeight: 45,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
+              child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20.0,buttonHeight: 45.0,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
             );
           }
           else
@@ -75,7 +75,7 @@ class _ContactUs extends StatelessWidget {
                // Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
 
               },
-              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10,buttonHeight: 45,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
+              child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10.0,buttonHeight: 45.0,buttonText: "Contact Us",color: Color(0xffEB5A6C),),
             );
           }
         }

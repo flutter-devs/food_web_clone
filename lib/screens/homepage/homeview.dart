@@ -85,7 +85,7 @@ class _HomeViewState extends State<HomeView> {
         if (constraints.maxWidth > 1200.0) {
           return customCarousel(size: size, height: 350.0, marginFromTop: 30.0);
         } else if (constraints.maxWidth > 800.0 &&
-            constraints.maxWidth < 1200) {
+            constraints.maxWidth < 1200.0) {
           return customCarousel(size: size, height: 250.0, marginFromTop: 20.0);
         } else {
           return customCarousel(size: size, height: 200.0, marginFromTop: 20.0);
@@ -100,7 +100,7 @@ class _HomeViewState extends State<HomeView> {
           text_1: text_1,
             text_2: text_2,
             fontSizeF: 21.0, fontSizeS: 18, marginFromTop: 20.0);
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0&& constraints.maxWidth < 1200.0) {
         return mostPopularSeeAllTextRow(
             text_1: text_1,
             text_2: text_2,
@@ -119,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
         if (constraints.maxWidth > 1200.0) {
           return field(width: size.width * 0.40, marginFromTop: 30.0);
         } else if (constraints.maxWidth > 800.0 &&
-            constraints.maxWidth < 1200) {
+            constraints.maxWidth < 1200.0) {
           return field(width: size.width * 0.55, marginFromTop: 20.0);
         } else {
           return field(width: size.width * 0.85, marginFromTop: 10.0);
@@ -218,7 +218,7 @@ class PopularRestaurantsLb extends StatelessWidget {
 
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return PopularRestaurantsList(
               marginOfItem: 20.0,
               heightOfView: 170.0,
@@ -252,37 +252,37 @@ class MealsDealsListLb extends StatelessWidget {
         builder: (BuildContext context, BoxConstraints constraints) {
           if(constraints.maxWidth > 1200.0) {
             return MealsDealList(
-              heightOfView: 350,
-              marginFromBottom: 20,
+              heightOfView: 350.0,
+              marginFromBottom: 20.0,
               fontSize: 22,
-              marginFromLeft: 20,
-              marginFromTop: 10,
-              imageWidth: 220,
-              fontSizeOfAdress: 18,
-              maxWidthOfAddress: 190,
-              marginFromTopAdress: 10,
-              cardSymetricMArgin: 14,
-              marginOfItem: 40,
-              bottomPositionedDish: 70,
-              bottomPositionedPlaces: 35,
+              marginFromLeft: 20.0,
+              marginFromTop: 10.0,
+              imageWidth: 220.0,
+              fontSizeOfAdress: 18.0,
+              maxWidthOfAddress: 190.0,
+              marginFromTopAdress: 10.0,
+              cardSymetricMArgin: 14.0,
+              marginOfItem: 40.0,
+              bottomPositionedDish: 70.0,
+              bottomPositionedPlaces: 35.0,
               marginFromLeftYellowHighlighter: 18.0,
             );
           }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
+          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return MealsDealList(
-              heightOfView: 300,
-              marginFromBottom: 20,
-              fontSize: 20,
-              marginFromLeft: 10,
-              marginFromTop: 10,
-              imageWidth: 200,
-              fontSizeOfAdress: 15,
-              maxWidthOfAddress: 180,
-              marginFromTopAdress: 10,
-              cardSymetricMArgin: 12,
-              marginOfItem: 30,
-              bottomPositionedDish: 60,
-              bottomPositionedPlaces: 25,
+              heightOfView: 300.0,
+              marginFromBottom: 20.0,
+              fontSize: 20.0,
+              marginFromLeft: 10.0,
+              marginFromTop: 10.0,
+              imageWidth: 200.0,
+              fontSizeOfAdress: 15.0,
+              maxWidthOfAddress: 180.0,
+              marginFromTopAdress: 10.0,
+              cardSymetricMArgin: 12.0,
+              marginOfItem: 30.0,
+              bottomPositionedDish: 60.0,
+              bottomPositionedPlaces: 25.0,
               marginFromLeftYellowHighlighter: 16.0,
             );
           }
@@ -338,18 +338,18 @@ class MostPopularListLb extends StatelessWidget {
           } else if (constraints.maxWidth > 800.0 &&
               constraints.maxWidth < 1200) {
             return MostPopularList(
-              heightOfView: 300,
-              marginFromBottom: 20,
-              fontSize: 20,
-              marginFromLeft: 10,
-              marginFromTop: 10,
-              imageWidth: 200,
-              imageHeight: 190,
-              fontSizeOfAdress: 15,
-              maxWidthOfAddress: 180,
-              marginFromTopAdress: 10,
-              cardSymetricMArgin: 12,
-              marginOfItem: 30,
+              heightOfView: 300.0,
+              marginFromBottom: 20.0,
+              fontSize: 20.0,
+              marginFromLeft: 10.0,
+              marginFromTop: 10.0,
+              imageWidth: 200.0,
+              imageHeight: 190.0,
+              fontSizeOfAdress: 15.0,
+              maxWidthOfAddress: 180.0,
+              marginFromTopAdress: 10.0,
+              cardSymetricMArgin: 12.0,
+              marginOfItem: 30.0,
             );
           } else {
             return MostPopularList(
@@ -384,7 +384,7 @@ class Sydney extends StatelessWidget {
           text: "Sydney CBD",
           fontWeight: FontWeight.bold,
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return CustomTextView(
             fontSize: 37,
             marginFromTop: 22,

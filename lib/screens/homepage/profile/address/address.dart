@@ -42,13 +42,13 @@ class _AddressLine extends StatelessWidget {
         return Container(
           margin: EdgeInsets.only(top: marginFromTopW),
           child: _addressLine(
-              size: size, fonttSizeOFText: 20.0, heading: heading, hint: hint ,marginFromTop: 40.0 ,marginRightFromText: 40.0 ,sizeOfField: size.width*.4,maxWidth: 150),
+              size: size, fonttSizeOFText: 20.0, heading: heading, hint: hint ,marginFromTop: 40.0 ,marginRightFromText: 40.0 ,sizeOfField: size.width*.4,maxWidth: 150.0),
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return Container(
           margin: EdgeInsets.only(top: marginFromTopT),
           child: _addressLine(
-              size: size, fonttSizeOFText: 18.0, heading: heading, hint: hint ,marginFromTop: 30.0,marginRightFromText: 30.0 ,sizeOfField: size.width*.55,maxWidth: 150),
+              size: size, fonttSizeOFText: 18.0, heading: heading, hint: hint ,marginFromTop: 30.0,marginRightFromText: 30.0 ,sizeOfField: size.width*.55,maxWidth: 150.0),
         );
       } else {
         return Container(
@@ -138,7 +138,7 @@ class _CustomAppBar extends StatelessWidget {
           fontSizeOfMyProfile: 22.0,
           headingText: "Delivery Address ",
         );
-      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200) {
+      } else if (constraints.maxWidth > 800.0 && constraints.maxWidth < 1200.0) {
         return CustomAppBarEditProfile(
           marginFromTop: 30.0,
           fontSizeOfDone: 18.0,
@@ -178,9 +178,9 @@ class _SAVEADRESS extends StatelessWidget {
             //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
           },
           child: CustomButton(
-            buttonWidth: 250,
-            marginFromTop: 30,
-            buttonHeight: 50,
+            buttonWidth: 250.0,
+            marginFromTop: 30.0,
+            buttonHeight: 50.0,
             buttonText: "SAVE ADDRESS",
             color: Color(0xffEB5A6C),
           ),
@@ -196,8 +196,8 @@ class _SAVEADRESS extends StatelessWidget {
           },
           child: CustomButton(
             buttonWidth: size.width * 0.40,
-            marginFromTop: 20,
-            buttonHeight: 45,
+            marginFromTop: 20.0,
+            buttonHeight: 45.0,
             buttonText: "SAVE ADDRESS",
             color: Color(0xffEB5A6C),
           ),
@@ -214,8 +214,8 @@ class _SAVEADRESS extends StatelessWidget {
           },
           child: CustomButton(
             buttonWidth: size.width * 0.9,
-            marginFromTop: 10,
-            buttonHeight: 45,
+            marginFromTop: 10.0,
+            buttonHeight: 45.0,
             buttonText: "SAVE ADDRESS",
             color: Color(0xffEB5A6C),
           ),

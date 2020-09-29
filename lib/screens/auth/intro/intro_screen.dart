@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_web_clone/common_widgets/common_image.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
-import 'package:food_web_clone/screens/auth/welcome_foodie_login/welcome_foodie_login.dart';
+import 'package:food_web_clone/screens/auth/signup/welcome_foodie_login.dart';
 import 'package:food_web_clone/utils/preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
