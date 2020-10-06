@@ -21,22 +21,28 @@ class _LocationState extends State<Location> {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-            width: size.width,
-        ),
-            UserCurrentLocatonLb(),
-            userNameField(
-                textEditingController: textEditingControllerUsername,
-                size: size,
-                hintText: "Search The City...",
-                valid: Validator().validateEmpty),
-            RecentlyVisitedCountry(),
-            FavouriteDivider(),
-            FlagListTileLb(),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  width: size.width,
+                ),
+                UserCurrentLocatonLb(),
+                userNameField(
+                    textEditingController: textEditingControllerUsername,
+                    size: size,
+                    hintText: "Search The City...",
+                    valid: Validator().validateEmpty),
+                RecentlyVisitedCountry(),
+                FavouriteDivider(),
+                FlagListTileLb(),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -135,26 +141,24 @@ class FavouriteDivider extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          if(constraints.maxWidth > 1200.0) {
-            return Container(
-              margin: EdgeInsets.only(top: 10.0,left: 20,right: 20),
-              height: 0.8,
-              width: size.width,
-              color: Colors.grey,
-            );
-          }
-          else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200) {
-            return Container(
-              margin: EdgeInsets.only(top: 8.0,left: 20,right: 20),
-              height: 0.8,
-              width: size.width,
-              color: Colors.grey,
-            );
-          }
-          else
-          {
-            return Container(
-              margin: EdgeInsets.only(top: 5.0,right: 10.0,left: 20.0),
+          if (constraints.maxWidth > 1200.0) {
+        return Container(
+          margin: EdgeInsets.only(top: 10.0, left: 20, right: 20),
+          height: 0.8,
+          width: size.width,
+          color: Colors.grey,
+        );
+      } else if (constraints.maxWidth > 800.0 &&
+          constraints.maxWidth < 1200.0) {
+        return Container(
+          margin: EdgeInsets.only(top: 8.0, left: 20, right: 20),
+          height: 0.8,
+          width: size.width,
+          color: Colors.grey,
+        );
+      } else {
+        return Container(
+          margin: EdgeInsets.only(top: 5.0,right: 10.0,left: 20.0),
               height: 0.8,
               width: size.width,
               color: Colors.grey,

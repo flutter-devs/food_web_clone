@@ -28,42 +28,47 @@ var marginOfItem;
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      width: size.width*0.97,
-      margin: EdgeInsets.only(top: marginOfItem),
+      width: size.width * 0.97,
+      margin: EdgeInsets.only(top: marginOfItem, bottom: marginOfItem),
       alignment: Alignment.center,
       height: heightOfView,
       child: ListView.builder(
-         // physics: NeverScrollableScrollPhysics(),
+          // physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 10,
           scrollDirection: Axis.horizontal,
-          itemBuilder: (context , index)=>Card(
-            margin: EdgeInsets.symmetric(horizontal: cardSymetricMArgin),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(8.0))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8.0),
-                    topRight: Radius.circular(8.0),
-                  ),
-                  child: Image.asset(
-                    homePageViewModel.listOfImages[index],
-                    width: imageWidth+20,
-                    height: imageHeight,
-                    fit: BoxFit.cover,
+          itemBuilder: (context, index) => InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailPageView(
+                              imagePath: homePageViewModel.listOfImages[index],
+                              headingText: homePageViewModel
+                                  .listOfMostPopularModel[index].dishName,
+                            ))),
+                child: Card(
+                  margin: EdgeInsets.symmetric(horizontal: cardSymetricMArgin),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(8.0),
+                          topRight: Radius.circular(8.0),
+                        ),
+                        child: Image.asset(
+                          homePageViewModel.listOfImages[index],
+                          width: imageWidth + 20,
+                          height: imageHeight,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-
-
-
-
-
-              ],
-            ),
-          )),
+              )),
     );
   }
 
@@ -113,66 +118,74 @@ class MostPopularList extends StatelessWidget {
          shrinkWrap: true,
          itemCount: 10,
          scrollDirection: Axis.horizontal,
-         itemBuilder: (context , index)=>Card(
-           margin: EdgeInsets.symmetric(horizontal: cardSymetricMArgin),
-           shape: RoundedRectangleBorder(
-               borderRadius: BorderRadius.all(Radius.circular(8.0))),
-           child: Column(
-             crossAxisAlignment: CrossAxisAlignment.center,
-             children: <Widget>[
-               ClipRRect(
-                 borderRadius: BorderRadius.only(
-                   topLeft: Radius.circular(8.0),
-                   topRight: Radius.circular(8.0),
-                 ),
-                 child: InkWell(
-                   onTap: ()
-                   {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPageView(
-                       imagePath: homePageViewModel.listOfImages[index],
-                       headingText:  homePageViewModel.listOfMostPopularModel[index].dishName,
-                     )));
-                   },
-                   child: Image.asset(
-                     homePageViewModel.listOfImages[index],
-                     width: imageWidth+20,
-                     height: imageHeight,
-                     fit: BoxFit.cover,
-                   ),
+         itemBuilder: (context, index) =>
+             Padding(
+               padding: const EdgeInsets.only(bottom: 1),
+               child: Card(
+                 elevation: 0,
+                 margin: EdgeInsets.symmetric(horizontal: cardSymetricMArgin),
+                 shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: <Widget>[
+                     ClipRRect(
+                       borderRadius: BorderRadius.only(
+                         topLeft: Radius.circular(8.0),
+                         topRight: Radius.circular(8.0),
+                       ),
+                       child: InkWell(
+                         onTap: () {
+                           Navigator.push(context, MaterialPageRoute(builder: (
+                               context) =>
+                               DetailPageView(
+                                 imagePath: homePageViewModel
+                                     .listOfImages[index],
+                                 headingText: homePageViewModel
+                                     .listOfMostPopularModel[index].dishName,
+                               )));
+                         },
+                         child: Image.asset(
+                           homePageViewModel.listOfImages[index],
+                           width: imageWidth + 20,
+                           height: imageHeight,
+                           fit: BoxFit.cover,
+                         ),
+                       ),
+                     ),
+                     CustomTextView(
+                       marginFromTop: marginFromTop,
+                       text: homePageViewModel.listOfMostPopularModel[index]
+                           .dishName,
+                       maxWidth: imageWidth,
+                       alignment: Alignment.topLeft,
+                       marginFromLeft: marginFromLeft,
+                       color: Colors.black,
+                       fontWeight: FontWeight.bold,
+                       fontSize: fontSize,
+                     ),
+                     Container(
+                       alignment: Alignment.topLeft,
+                       width: maxWidthOfAddress,
+                       margin: EdgeInsets.only(
+                           bottom: marginFromBottom, top: marginFromTopAdress),
+                       child: Text(
+                         homePageViewModel.listOfMostPopularModel[index].adress,
+                         textAlign: TextAlign.left,
+                         // maxLines: 2,
+                         style: TextStyle(
+                           color: Colors.grey,
+                           fontWeight: FontWeight.bold,
+                           fontSize: fontSizeOfAdress,
+                         ),
+                       ),
+                     ),
+
+
+                   ],
                  ),
                ),
-               CustomTextView(
-                 marginFromTop: marginFromTop,
-                 text: homePageViewModel.listOfMostPopularModel[index].dishName,
-                 maxWidth: imageWidth,
-                 alignment: Alignment.topLeft,
-                 marginFromLeft: marginFromLeft,
-                 color: Colors.black,
-                 fontWeight: FontWeight.bold,
-                 fontSize: fontSize,
-               ),
-               Container(
-                 alignment: Alignment.topLeft,
-                 width: maxWidthOfAddress,
-                 margin: EdgeInsets.only(bottom: marginFromBottom,top: marginFromTopAdress),
-                 child: Text(
-                   homePageViewModel.listOfMostPopularModel[index].adress,
-                   textAlign: TextAlign.left,
-                  // maxLines: 2,
-                   style: TextStyle(
-                     color: Colors.grey,
-                     fontWeight: FontWeight.bold,
-                     fontSize: fontSizeOfAdress,
-                   ),
-                 ),
-               ),
-
-
-
-
-             ],
-           ),
-         )),
+             )),
    );
   }
 }

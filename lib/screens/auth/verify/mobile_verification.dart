@@ -63,10 +63,13 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
                 focusColor: Colors.transparent,
 
                 onTap: () {
-                  if (formKey.currentState.validate()) {
-                    print("yes its hit");
-                  }
-                },
+              //   if (formKey.currentState!=null&&formKey.currentState.validate()) {
+              print("yes its hit");
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
+
+              // }
+            },
                 child: CustomButton(buttonWidth: 250.0,
                   marginFromTop: 30.0,
                   buttonHeight: 50.0,
@@ -85,9 +88,12 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
 
                 onTap: () {
                   //  Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
-                  if (formKey.currentState.validate()) {
-                    print("yes its hit");
-                  }
+                  // if (formKey.currentState!=null&&formKey.currentState.validate()) {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+
+                  print("yes its hit");
+                  //}
                 },
                 child: CustomButton(buttonWidth: size.width * 0.40,
                   marginFromTop: 20.0,
@@ -107,9 +113,12 @@ class _MobileVerificationScreenState extends State<MobileVerificationScreen> {
 
                 onTap: () {
                   //  Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
-                  if (formKey.currentState.validate()) {
-                    print("yes its hit");
-                  }
+                  // if (formKey.currentState!=null&&formKey.currentState.validate()) {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+
+                  print("yes its hit");
+                  //}
                 },
                 child: InkWell(
                   onTap: (){

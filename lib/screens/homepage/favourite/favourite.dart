@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
+import 'package:food_web_clone/screens/homepage/detail_page_view/detailpage_view.dart';
 import 'package:food_web_clone/screens/homepage/homepage_view_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -50,7 +51,6 @@ class HeadingFavouriteText extends StatelessWidget{
     );
   }
 }
-
 
 class WishListItemLb extends StatelessWidget {
   @override
@@ -157,114 +157,154 @@ class WishListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
         itemCount: 3,
-
-        itemBuilder: (context,index)=>Card(
-
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: marginBetweenItem),
-        height: heightOfCardView,
-        width: size.width,
-        padding:  EdgeInsets.all(allItemPadding),
-        child: Row(
-          children: <Widget>[
-            // image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(_homePageViewModel.listOfImages[index],
-                height: heightOfImage,
-                width: widthOfImage,
-                fit: BoxFit.cover,
-              ),
-            ),
-
-            //
-            Container(
-              margin: EdgeInsets.only(left:  marginFromLeft),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    width: size.width - widthOfGoodThaiRow,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(left: 0),
-                          child: Text(_homePageViewModel.listOfFavouriteFoodItems[index],style: GoogleFonts.lato(
-                              fontStyle: FontStyle.normal, color: Colors.black,fontSize: fontSizeOfDishName,fontWeight: FontWeight.bold),),
+        itemBuilder: (context, index) => InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DetailPageView(
+                            imagePath: _homePageViewModel.listOfImages[index],
+                            headingText: _homePageViewModel
+                                .listOfFavouriteFoodItems[index],
+                          ))),
+              child: Card(
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: marginBetweenItem),
+                  height: heightOfCardView,
+                  width: size.width,
+                  padding: EdgeInsets.all(allItemPadding),
+                  child: Row(
+                    children: <Widget>[
+                      // image
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          _homePageViewModel.listOfImages[index],
+                          height: heightOfImage,
+                          width: widthOfImage,
+                          fit: BoxFit.cover,
                         ),
+                      ),
 
-                        Container(
-                          height: heightOfRating,
-                          width: widthOfRating,
-                          decoration: BoxDecoration(
-                            color: Colors.yellow,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          alignment: Alignment.center,
-                          child: Text(_homePageViewModel.listOfFavouriteFoodItemsRating[index],style: GoogleFonts.lato(
-                              fontStyle: FontStyle.normal, color: Colors.white,fontSize: 17,fontWeight: FontWeight.bold),),
-                        ),
-
-                      ],
-                    ),
-                  ),
-
-                  // time text
-                  Container(
-                    margin: EdgeInsets.only(left: 0),
-                    child: Text("11:30AM to 11:00PM",style: GoogleFonts.lato(
-                        fontStyle: FontStyle.normal, color: Colors.grey,fontSize: fontSizeOFTime),),
-                  ),
-                  //adress
-                  Container(
-                    width: size.width - widthOfGoodThaiRow,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
+                      //
+                      Container(
+                        margin: EdgeInsets.only(left: marginFromLeft),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Container(
-                              margin: EdgeInsets.only(left: 0),
-                              child: Text(_homePageViewModel.listOfMostPopularModel[index].adress,style: GoogleFonts.lato(
-                                  fontStyle: FontStyle.normal, color: Colors.grey,fontSize: fontSizeOfAdress),),
+                              width: size.width - widthOfGoodThaiRow,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(left: 0),
+                                    child: Text(
+                                      _homePageViewModel
+                                          .listOfFavouriteFoodItems[index],
+                                      style: GoogleFonts.lato(
+                                          fontStyle: FontStyle.normal,
+                                          color: Colors.black,
+                                          fontSize: fontSizeOfDishName,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: heightOfRating,
+                                    width: widthOfRating,
+                                    decoration: BoxDecoration(
+                                      color: Colors.yellow,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      _homePageViewModel
+                                              .listOfFavouriteFoodItemsRating[
+                                          index],
+                                      style: GoogleFonts.lato(
+                                          fontStyle: FontStyle.normal,
+                                          color: Colors.white,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
 
-                            // Asia, Thai Text
+                            // time text
                             Container(
                               margin: EdgeInsets.only(left: 0),
-                              child: Text("Asia Thai ",style: GoogleFonts.lato(
-                                  fontStyle: FontStyle.normal, color: Colors.grey,fontSize: fontSizeOfLandmark),),
+                              child: Text(
+                                "11:30AM to 11:00PM",
+                                style: GoogleFonts.lato(
+                                    fontStyle: FontStyle.normal,
+                                    color: Colors.grey,
+                                    fontSize: fontSizeOFTime),
+                              ),
+                            ),
+                            //adress
+                            Container(
+                              width: size.width - widthOfGoodThaiRow,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsets.only(left: 0),
+                                        child: Text(
+                                          _homePageViewModel
+                                              .listOfMostPopularModel[index]
+                                              .adress,
+                                          style: GoogleFonts.lato(
+                                              fontStyle: FontStyle.normal,
+                                              color: Colors.grey,
+                                              fontSize: fontSizeOfAdress),
+                                        ),
+                                      ),
+
+                                      // Asia, Thai Text
+                                      Container(
+                                        margin: EdgeInsets.only(left: 0),
+                                        child: Text(
+                                          "Asia Thai ",
+                                          style: GoogleFonts.lato(
+                                              fontStyle: FontStyle.normal,
+                                              color: Colors.grey,
+                                              fontSize: fontSizeOfLandmark),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  // book mark icon
+                                  Container(
+                                    margin: EdgeInsets.only(left: 9),
+                                    child: Icon(
+                                      Icons.bookmark,
+                                      size: fontSizeOFBookMark,
+                                      color: Colors.lightBlue,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                        // book mark icon
-                        Container(
-                          margin: EdgeInsets.only(left: 9)
-                          ,child: Icon(
-                          Icons.bookmark,
-                          size: fontSizeOFBookMark,
-                          color: Colors.lightBlue,
-                        ),
-                        )
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-
-                ],
+                ),
               ),
-            ),
-
-          ],
-        ),
-      ),
-    ));
+            ));
   }
 }

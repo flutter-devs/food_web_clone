@@ -24,16 +24,24 @@ class _HomeViewState extends State<HomeView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(width: size.width,),
+              SizedBox(
+                width: size.width,
+              ),
               Sydney(),
               searchField(size),
               topHorizontalImagesList(size),
-              mostPopularSeeAllTextRowLb(size,"Most Popular" ,"See all"),
+              mostPopularSeeAllTextRowLb(size, "Most Popular", "See all"),
               MostPopularListLb(),
-              mostPopularSeeAllTextRowLb(size,"Meals Deals" ,"See all"),
+              SizedBox(
+                height: 10,
+              ),
+              mostPopularSeeAllTextRowLb(size, "Meals Deals", "See all"),
               MealsDealsListLb(),
-              SizedBox(height: 50,),
-              mostPopularSeeAllTextRowLb(size,"Popular Restaurants" ,"See all"),
+              SizedBox(
+                height: 50,
+              ),
+              mostPopularSeeAllTextRowLb(
+                  size, "Popular Restaurants", "See all"),
               PopularRestaurantsLb(),
             ],
           ),

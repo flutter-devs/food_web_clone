@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_web_clone/common_widgets/custom_button.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
+import 'package:food_web_clone/screens/auth/login/login.dart';
 import 'package:food_web_clone/screens/auth/verify/mobile_verification.dart';
 import 'package:food_web_clone/screens/homepage/profile/profile_widgets.dart';
 
@@ -45,7 +46,7 @@ class _LogoutButton extends StatelessWidget {
               onTap: ()
               {
 
-            //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
+               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login()));
               },
               child: CustomButton( buttonWidth: 250.0,marginFromTop: 30.0,buttonHeight: 50.0,buttonText: "Logout",color: Color(0xffEB5A6C),),
             );
@@ -60,7 +61,7 @@ class _LogoutButton extends StatelessWidget {
 
               onTap: ()
               {
-            //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login()));
               },
               child:CustomButton( buttonWidth: size.width*0.40,marginFromTop: 20.0,buttonHeight: 45.0,buttonText: "Logout",color: Color(0xffEB5A6C),),
             );
@@ -77,7 +78,7 @@ class _LogoutButton extends StatelessWidget {
 
               onTap: ()
               {
-            //    Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));Navigator.push(context, MaterialPageRoute(builder: (context)=> MobileVerificationScreen()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login()));
 
               },
               child: CustomButton( buttonWidth: size.width*0.9,marginFromTop: 10.0,buttonHeight: 45.0,buttonText: "Logout",color: Color(0xffEB5A6C),),

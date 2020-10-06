@@ -25,42 +25,45 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Form(
-        key: formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            WelcomeToFoodiezHedingText(),
-            CreateYourAccount(),
-            userNameField(
-                textEditingController: textEditingControllerUsername,
-                size: size,
-                hintText: "Username",
-                valid: Validator().validateEmpty,
-              isObsecure: false
-            ),
-            userNameField(
-                textEditingController: textEditingControllerEmail,
-                size: size,
-                hintText: "Email",
-                valid: Validator().validateEmail,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Form(
+          key: formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              WelcomeToFoodiezHedingText(),
+              CreateYourAccount(),
+              userNameField(
+                  textEditingController: textEditingControllerUsername,
+                  size: size,
+                  hintText: "Username",
+                  valid: Validator().validateEmpty,
                 isObsecure: false
+              ),
+              userNameField(
+                  textEditingController: textEditingControllerEmail,
+                  size: size,
+                  hintText: "Email",
+                  valid: Validator().validateEmail,
+                  isObsecure: false
 
-            ),
-            userNameField(
-                textEditingController: textEditingControllerPassword,
-                size: size,
-                hintText: "Password",
-                valid: Validator().validateEmpty,
-                isObsecure: true
+              ),
+              userNameField(
+                  textEditingController: textEditingControllerPassword,
+                  size: size,
+                  hintText: "Password",
+                  valid: Validator().validateEmpty,
+                  isObsecure: true
 
-            ),
-            // PasswordField(textEditingController: textEditingControllerPassword,key: _formKey,),
-            signUp(size),
-            TermsAndCondition(),
-            Spacer(),
-            LogInYourAccount(),
-          ],
+              ),
+              // PasswordField(textEditingController: textEditingControllerPassword,key: _formKey,),
+              signUp(size),
+              //TermsAndCondition(),
+              //Spacer(),
+              LogInYourAccount(),
+            ],
+          ),
         ),
       ),
     );
@@ -275,7 +278,7 @@ class LogInYourAccount extends StatelessWidget {
           child: CustomTextView(
               fontSize: 16,
               marginFromTop: 15,
-              text: "Login in your account",
+              text: "Already have an account?",
               marginFromBottom: 40.0,
               color: Colors.green),
         );
@@ -290,7 +293,7 @@ class LogInYourAccount extends StatelessWidget {
             child: CustomTextView(
                 fontSize: 15,
                 marginFromTop: 10,
-                text: "Login in your account",
+                text: "Already have an account?",
                 marginFromBottom: 25.0,
                 color: Colors.green));
       } else {
@@ -304,7 +307,7 @@ class LogInYourAccount extends StatelessWidget {
             child: CustomTextView(
                 fontSize: 14,
                 marginFromTop: 15,
-                text: "Login in your account",
+                text: "Already have an account?",
                 marginFromBottom: 20.0,
                 color: Colors.green));
       }

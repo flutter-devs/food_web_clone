@@ -37,9 +37,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Food Demo',
       theme: ThemeData(
-        primaryColor: Colors.white,
+        cursorColor: Colors.black,
+        primaryColor: Colors.black,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: StreamBuilder(
