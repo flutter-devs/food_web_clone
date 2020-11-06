@@ -9,7 +9,6 @@ class DetailPageView extends StatelessWidget {
 
   String imagePath;
   String headingText;
-
   DetailPageView({this.imagePath, this.headingText});
 
   @override
@@ -228,17 +227,19 @@ class OrderFoodDeliveryButtonLb extends StatelessWidget {
           if(constraints.maxWidth > 1200.0) {
             return OrderFoodDeliveryButton(
               fontSizeText: 23.0,
-              heightOFButton: 65.0,
+              heightOFButton: 55.0,
               maxWidth: 250.0,
               marginFromTop: 20.0,
+              widthOfButton: 110,
             );
           }
           else if(constraints.maxWidth >800.0 && constraints.maxWidth <1200.0) {
             return OrderFoodDeliveryButton(
               fontSizeText: 20.0,
-              heightOFButton: 60.0,
+              heightOFButton: 50.0,
               marginFromTop: 10.0,
               maxWidth: 200.0,
+              widthOfButton: 80,
             );
           }
           else
@@ -246,10 +247,12 @@ class OrderFoodDeliveryButtonLb extends StatelessWidget {
             return OrderFoodDeliveryButton(
               fontSizeText: 17.0,
               heightOFButton: 45.0,
-             maxWidth: size.width,
+             maxWidth: 140.0,
+              marginFromTop: 10.0,
+              widthOfButton: 60,
+
             );
           }
-
         }
     );
   }
@@ -270,6 +273,7 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
        builder: (BuildContext context, BoxConstraints constraints) {
          if (constraints.maxWidth > 1200.0) {
            return HeadingBarDetailPageView(
+
              headingText: headingText,
              imagePath: imagePath,
              heightOfImage: size.height*.45,
@@ -281,6 +285,9 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
              postionedBottomTitle: 45,
              maxWidthOfText: 240,
              alignment: Alignment.center,
+             fontSizeOfNoOfItemText: 13,
+             sizeOfItemView: 22,
+
 
            );
          }
@@ -296,12 +303,14 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
              positionedLeftTitle: 15,
              postionedBottomTitle: 35,
              maxWidthOfText: 200,
-
+fontSizeOfNoOfItemText: 13,
+             sizeOfItemView: 20,
            );
          }
          else {
 
            return HeadingBarDetailPageView(
+             fontSizeOfNoOfItemText: 11.0,
              headingText: headingText,
              imagePath: imagePath,
              heightOfImage: size.height*.35,
@@ -312,7 +321,9 @@ class HeadingBarDetailPageViewLb extends StatelessWidget{
              positionedtopIcon: 40,
              positionedLeftTitle: 10,
              postionedBottomTitle: 20,
-             maxWidthOfText: 150,
+             maxWidthOfText: 150.0,
+             sizeOfItemView: 18.0,
+
 
            );
          }

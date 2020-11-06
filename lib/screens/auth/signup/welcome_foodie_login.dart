@@ -70,7 +70,7 @@ class _WelcomeFoodieLoginState extends State<WelcomeFoodieLogin> {
   }
 
   signUp(size) => LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
+      builder: (BuildContext context, BoxConstraints constraints) {
         if (constraints.maxWidth > 1200.0) {
           // return CustomButton( buttonWidth: 250,marginFromTop: 30,);
           return InkWell(

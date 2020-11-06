@@ -109,7 +109,7 @@ class MostPopularList extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      width: size.width*0.94,
+      width: size.width*0.92,
       margin: EdgeInsets.only(top: marginOfItem),
       alignment: Alignment.center,
      height: heightOfView,
@@ -180,7 +180,6 @@ class MostPopularList extends StatelessWidget {
                          ),
                        ),
                      ),
-
 
                    ],
                  ),

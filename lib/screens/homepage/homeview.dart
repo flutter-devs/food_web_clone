@@ -2,6 +2,8 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_web_clone/common_widgets/custom_textview.dart';
+import 'package:food_web_clone/const/color_const.dart';
+import 'package:food_web_clone/screens/chat/chat_homescreen.dart';
 import 'package:food_web_clone/screens/homepage/homepage_view_model.dart';
 import 'package:food_web_clone/screens/homepage/homepage_widgets.dart';
 import 'package:food_web_clone/screens/homepage/see_all_trending/trending.dart';
@@ -20,6 +22,23 @@ class _HomeViewState extends State<HomeView> {
     var size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: ()
+          {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> ChatHomeScreen()));
+          },
+          backgroundColor: ColorConstant.buttonColor,
+          child:   Container(
+            color: ColorConstant.buttonColor,
+            margin: EdgeInsets.only(left: 0),
+            child: Icon(
+              Icons.chat,
+              size: 24,
+              color: Colors.white,
+            ),
+          ),
+
+        ),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -329,7 +348,7 @@ class MostPopularListLb extends StatelessWidget {
         builder: (BuildContext context, BoxConstraints constraints) {
           if (constraints.maxWidth > 1200.0) {
             return MostPopularList(
-              heightOfView: 350.0,
+              heightOfView: 353.0,
               marginFromBottom: 20.0,
               fontSize: 22.0,
               marginFromLeft: 20.0,
