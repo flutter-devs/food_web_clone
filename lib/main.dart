@@ -51,6 +51,7 @@ class _MyAppState extends State<MyApp> {
     _landingBloc = LandingBloc();
     _landingBloc.updateLoginStatus();
     super.initState();
+
   }
 
   @override
